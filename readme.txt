@@ -1,4 +1,4 @@
-=== Feature A Page Widget ===
+﻿=== Feature A Page Widget ===
 Contributors: mrwweb
 Donate link: https://flattr.com/profile/mrwweb
 Tags: Widget, Widgets, Sidebar, Page, Pages, Featured Page, Thumbnail, Featured Image, Content, Link, Post Thumbnail, Excerpt, Simple
@@ -12,12 +12,7 @@ Shows a summary of any Page in any sidebar.
 
 == Description ==
 
-Feature A Page Widget aims to provide a "just works" solution for showcasing a Page in any sidebar. It features:
- * Core WordPress features. Nothing crazy.
- * A *simple* set of options with a thought-through UI.
- * Three widget layouts.
- * Filters and templating for powerful customizations.
- * i18n ready.
+Feature A Page Widget aims to provide a "just works" solution for showcasing a Page in any sidebar. It features Core WordPress features, a *simple* set of options with a thought-through UI, three widget layouts, filters and templating for powerful customizations, and i18n readiness.
 
 For those more technically adept, there are three filters and a template to customize the output of the widget (see the [FAQ](faq/) for more information).
 
