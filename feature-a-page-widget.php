@@ -7,6 +7,7 @@
 * Author: Mark Root-Wiley (MRWweb)
 * Author URI: http://mrwweb.com
 * License: GPLv2 or later
+* Text Domain: fapw
 */
 
 /*
@@ -48,7 +49,7 @@ function fpw_upgrade() {
 }
 
 function fpw_uninstall() {
-	// Delete Plugin Options
+	// Delete Plugin Options on Uninstall
 	delete_option( 'fpw_options' );
 }
 
@@ -108,7 +109,7 @@ register_uninstall_hook( __FILE__, 'fpw_uninstall' );
 add_action( 'admin_enqueue_scripts', 'fpw_admin_scripts' );
 add_action( 'wp_enqueue_scripts', 'fpw_styles' );
 
-// Enable Excerpts, Post Thumbnails, and Custom Image Sizes
+// Enable Excerpts, Post Thumbnails, and Custom Image Sizes. Load textdomain
 add_action( 'init', 'fpw_page_supports', 20 );
 add_action('plugins_loaded', 'fpw_textdomain');
 

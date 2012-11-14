@@ -14,7 +14,7 @@ Shows a summary of any Page in any sidebar.
 
 Feature A Page Widget aims to provide a "just works" solution for showcasing a Page in any sidebar. It features Core WordPress features, a *simple* set of options with a thought-through UI, three widget layouts, filters and templating for powerful customizations, and i18n readiness.
 
-For those more technically adept, there are three filters and a template to customize the output of the widget (see the [FAQ](faq/) for more information).
+For those more technically adept, there are three filters and a template to customize the output of the widget (see the [FAQ](http://wordpress.org/extend/plugins/feature-a-page-widget/faq/) for more information).
 
 = How to Use the Widget =
 *This plugin enables Featured Images (technically, Post Thumbnails) and Excerpts for **Pages** in WordPress. If you don't see one or both of those fields, they may be hidden in the "Screen Options" (look in top-right corner) for Pages.*
