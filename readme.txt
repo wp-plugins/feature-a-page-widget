@@ -1,4 +1,4 @@
-﻿=== Feature A Page Widget ===
+=== Feature A Page Widget ===
 Contributors: mrwweb
 Donate link: https://flattr.com/profile/mrwweb
 Tags: Widget, Widgets, Sidebar, Page, Pages, Featured Page, Thumbnail, Featured Image, Content, Link, Post Thumbnail, Excerpt, Simple
@@ -14,7 +14,7 @@ Shows a summary of any Page in any sidebar.
 
 Feature A Page Widget aims to provide a "just works" solution for showcasing a Page in any sidebar. It features Core WordPress features, a *simple* set of options with a thought-through UI, three widget layouts, filters and templating for powerful customizations, and i18n readiness.
 
-For those more technically adept, there are three filters and a template to customize the output of the widget (see the [FAQ](http://wordpress.org/extend/plugins/feature-a-page-widget/faq/) for more information).
+For those more technically adept, there are three filters and a template to customize the output of the widget (see the [FAQ](faq/) for more information).
 
 = How to Use the Widget =
 *This plugin enables Featured Images (technically, Post Thumbnails) and Excerpts for **Pages** in WordPress. If you don't see one or both of those fields, they may be hidden in the "Screen Options" (look in top-right corner) for Pages.*
@@ -28,6 +28,9 @@ For those more technically adept, there are three filters and a template to cust
 
 = A Word About Image Sizes =
 This plugin creates different image sizes for use in the plugin. If you plan to use images that were uploaded to your media library before you installed this plugin, you'd be wise to use a plugin like [Regenerate Thumbnails](http://wordpress.org/extend/plugins/regenerate-thumbnails/) or [Dynamic Image Resizer](http://wordpress.org/extend/plugins/regenerate-thumbnails/).
+
+= Requested Options Poll and Giving Feedback =
+Please [vote on the options](http://mrwweb.com/feature-a-page-widget-plugin-wordpress/#gform_wrapper_5) you'd like to see in future versions of the plugin. Only the very-most requested options will be added. A more [in-depth feedback form](http://mrwweb.com/feature-a-page-widget-plugin-wordpress/#gform_wrapper_4) is also available, and, as always, please consider [rating/reviewing the plugin](http://wordpress.org/support/view/plugin-reviews/feature-a-page-widget).
 
 = Themes Tested =
 Twenty Twelve, Twenty Eleven, Twenty Ten, P2, Kubrick (for old times' sake)
