@@ -1,9 +1,9 @@
-=== Feature A Page Widget ===
+﻿=== Feature A Page Widget ===
 Contributors: mrwweb
 Donate link: https://flattr.com/profile/mrwweb
 Tags: Widget, Widgets, Sidebar, Page, Pages, Featured Page, Thumbnail, Featured Image, Content, Link, Post Thumbnail, Excerpt, Simple
 Requires at least: 3.0.0
-Tested up to: 3.4.2
+Tested up to: 3.5-beta3
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
