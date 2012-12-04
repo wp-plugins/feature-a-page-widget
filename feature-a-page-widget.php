@@ -6,6 +6,7 @@
 * Version: 1.0.0
 * Author: Mark Root-Wiley (MRWweb)
 * Author URI: http://mrwweb.com
+* Donate Link: https://www.networkforgood.org/donation/MakeDonation.aspx?ORGID2=522061398
 * License: GPLv2 or later
 * Text Domain: fapw
 */
@@ -54,20 +55,17 @@ function fpw_uninstall() {
 }
 
 function fpw_admin_scripts( $hook ) {
-
 	// Keep the rest of WordPress snappy. Only run on the widgets.php page.
-	if( !'widgets.php' == $hook )
-		return;
+	if( 'widgets.php' == $hook ) {
+		// The Chosen jQuery Plugin - http://harvesthq.github.com/chosen/
+		wp_enqueue_script( 'fpw_chosen_js', plugins_url( 'chosen/chosen.jquery.min.js', __FILE__ ), array( 'jquery' ), '0.9.8' );
+		wp_enqueue_style( 'fpw_chosen_css', plugins_url( 'chosen/chosen.css', __FILE__ ), false, '0.9.8' );
 
-	// The Chosen jQuery Plugin - http://harvesthq.github.com/chosen/
-	wp_enqueue_script( 'fpw_chosen_js', plugins_url( 'chosen/chosen.jquery.min.js', __FILE__ ), array( 'jquery' ), '0.9.8' );
-	wp_enqueue_style( 'fpw_chosen_css', plugins_url( 'chosen/chosen.css', __FILE__ ), false, '0.9.8' );
-
-	// Plugin JS
-	wp_enqueue_script( 'fpw_admin_js', plugins_url( 'js/fpw_admin.js', __FILE__ ), array( 'jquery', 'fpw_chosen_js' ), FPW_VERSION );
-	// Plugin CSS
-	wp_enqueue_style( 'fpw_admin_css', plugins_url( 'css/fpw_admin.css', __FILE__ ), false, FPW_VERSION );
-
+		// Plugin JS
+		wp_enqueue_script( 'fpw_admin_js', plugins_url( 'js/fpw_admin.js', __FILE__ ), array( 'jquery', 'fpw_chosen_js' ), FPW_VERSION );
+		// Plugin CSS
+		wp_enqueue_style( 'fpw_admin_css', plugins_url( 'css/fpw_admin.css', __FILE__ ), false, FPW_VERSION );
+	}
 }
 
 // enqueue styles to layout widget on front end
@@ -92,7 +90,7 @@ function fpw_page_supports() {
 
 // any languages files
 function fpw_textdomain() {
-	load_plugin_textdomain( 'fapw', false, plugins_url( 'languages', __FILE__ ) );
+	load_plugin_textdomain( 'fapw', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 }
 
 // Here we go. Register the widget. It's in fpw_widget.class.php.

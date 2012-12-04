@@ -1,10 +1,10 @@
-﻿=== Feature A Page Widget ===
+=== Feature A Page Widget ===
 Contributors: mrwweb
-Donate link: https://flattr.com/profile/mrwweb
+Donate link: https://www.networkforgood.org/donation/MakeDonation.aspx?ORGID2=522061398
 Tags: Widget, Widgets, Sidebar, Page, Pages, Featured Page, Thumbnail, Featured Image, Content, Link, Post Thumbnail, Excerpt, Simple
 Requires at least: 3.0.0
-Tested up to: 3.5-beta3
-Stable tag: 1.0.0
+Tested up to: 3.5
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,28 +12,30 @@ Shows a summary of any Page in any sidebar.
 
 == Description ==
 
-Feature A Page Widget aims to provide a "just works" solution for showcasing a Page in any sidebar. It features Core WordPress features, a *simple* set of options with a thought-through UI, three widget layouts, filters and templating for powerful customizations, and i18n readiness.
+Feature A Page Widget aims to provide a "just works" solution for showcasing a Page in any sidebar. It leverages Core WordPress features, a *simple* set of options with a thought-through UI including three widget layouts.
 
-For those more technically adept, there are three filters and a template to customize the output of the widget (see the [FAQ](faq/) for more information).
+For those more technically adept, there are three filters and a template to customize the output of the widget (see the [FAQ](http://wordpress.org/extend/plugins/feature-a-page-widget/) for more information). It's also i18n ready.
 
 = How to Use the Widget =
-*This plugin enables Featured Images (technically, Post Thumbnails) and Excerpts for **Pages** in WordPress. If you don't see one or both of those fields, they may be hidden in the "Screen Options" (look in top-right corner) for Pages.*
+This plugin enables Featured Images (aka "Post Thumbnails") and Excerpts for **Pages** in WordPress. If you don't see one or both of those fields, they may be hidden in the "Screen Options" (look in top-right corner) for Pages.
 
-1. Edit the page you will feature.
+1. Edit the page you want to feature.
 1. Fill out the [Excerpt](http://en.support.wordpress.com/splitting-content/excerpts/#creating-excerpts) and select a [Featured Image](http://en.support.wordpress.com/featured-images/#setting-a-featured-image) on that page.
 1. Go to Appearance > Widgets.
-1. Add an instance of the "Feature a Page Widget" to the sidebar that will feature the page.
-1. Select the page you just edited. Choose a layout to use and give the Widget a title if you want.
+1. Add an instance of the "Feature a Page Widget" to the sidebar of your choosing.
+1. Select the Page, choose a layout, and give the widget a title if you want.
 1. Save the widget. Admire your handiwork.
 
 = A Word About Image Sizes =
-This plugin creates different image sizes for use in the plugin. If you plan to use images that were uploaded to your media library before you installed this plugin, you'd be wise to use a plugin like [Regenerate Thumbnails](http://wordpress.org/extend/plugins/regenerate-thumbnails/) or [Dynamic Image Resizer](http://wordpress.org/extend/plugins/regenerate-thumbnails/).
+This plugin creates multiple custom image sizes. If you use images that were uploaded to the  media library before you installed this plugin, you'd be wise to use a plugin like [Regenerate Thumbnails](http://wordpress.org/extend/plugins/regenerate-thumbnails/) or [Dynamic Image Resizer](http://wordpress.org/extend/plugins/regenerate-thumbnails/).
 
-= Requested Options Poll and Giving Feedback =
-Please [vote on the options](http://mrwweb.com/feature-a-page-widget-plugin-wordpress/#gform_wrapper_5) you'd like to see in future versions of the plugin. Only the very-most requested options will be added. A more [in-depth feedback form](http://mrwweb.com/feature-a-page-widget-plugin-wordpress/#gform_wrapper_4) is also available, and, as always, please consider [rating/reviewing the plugin](http://wordpress.org/support/view/plugin-reviews/feature-a-page-widget).
+= Tell Me How to Make The Plugin Better =
+* [Vote on the options](http://mrwweb.com/feature-a-page-widget-plugin-wordpress/#gform_wrapper_5) you'd like to see in future versions of the plugin.
+* Give me [in-depth feedback](http://mrwweb.com/feature-a-page-widget-plugin-wordpress/#gform_wrapper_4).
+* [Rate/Review the plugin](http://wordpress.org/support/view/plugin-reviews/feature-a-page-widget).
 
 = Themes Tested =
-Twenty Twelve, Twenty Eleven, Twenty Ten, P2, Kubrick (for old times' sake)
+Twenty Twelve, Twenty Eleven, Twenty Ten, P2, Kubrick (for old times' sake), Multiple Custom Themes
 
 == Installation ==
 
@@ -41,6 +43,7 @@ Twenty Twelve, Twenty Eleven, Twenty Ten, P2, Kubrick (for old times' sake)
 1. Activate the plugin through the 'Plugins' menu in WordPress.
 1. Fill out the excerpt and select the featured image for the Page(s) you will feature.
 1. From "Appearance" > "Widgets," you can now drag the "Feature a Page" widget into any sidebar.
+1. Find advanced instructions, code snippets, and more in the [FAQ](http://wordpress.org/extend/plugins/feature-a-page-widget/).
 
 == Frequently Asked Questions ==
 
@@ -50,10 +53,10 @@ The widget gets its image from the "Featured Image" field on the page you are fe
 1. Go to the page you're featuring.
 1. In the right sidebar, look for the "Set Featured Image" link.
 1. Use the media picker to find the image and then select "Use as Featured Image."
-1. Update the page and you're reading to go.
+1. Update the page and you're ready to go.
 
 = How do I set the widget text? =
-The widget gets its text from the "Excerpt" field on the page you are featuring.
+The widget gets its text from the "Excerpt" field on the page you are featuring. See also: "Can I use HTML or a WYSIWYG/TinyMCE Editor with the Excerpt Field?"
 
 1. Go to the page you want to featured.
 1. Below the body field, look for the "Excerpt" field.
@@ -65,28 +68,31 @@ The widget gets its text from the "Excerpt" field on the page you are featuring.
 1. From the menu that slides down, make sure the "Excerpt" and "Featured Image" are both checked.
 1. Done! WordPress remembers this choice on all pages.
 
-= What if I don't want the Featured Image / Excerpt on my Page editing screen? =
-The widget won't do much without those two fields, but if you really don't want them, uncheck the boxes mentioned in the previous question. You can always display them again by following the instructions in the previous question.
-
-= How can I tell if a page has a featured image or excerpt already? =
-When selecting the page to feature in the widget settings, the list of pages includes two icons. The first icon is the featured image, and the second is the excerpt. If the icon is "lit-up," that means that page has that piece of information. If both are lit-up, the page is ready for optimal use in the widget. See the "Screenshots" tab for a diagram.
+= What are those icons in the "Select Page" drop down? / How can I tell if a page has a featured image or excerpt already? =
+When selecting the page to feature in the widget settings, the list of pages includes two icons. The first icon is the featured image, and the second is the excerpt. If the icon is "lit-up," that means that page has that piece of information. If both are lit-up, the page is ready for optimal use in the widget. See this interface in the "Screenshots" tab.
 
 = How can I modify the widget design or output? =
 The widget offers three ways to customize its design and output. The right method for you depends on what you want to accomplish and what you're comfortable doing technically.
 
-1. **Write your own CSS rules.** The plugin's CSS selectors have as low a priority as possible, so you should be able to override styles pretty easily.
+1. **Write your own CSS rules.** The plugin's CSS selectors have as low a priority as possible, so you should be able to override styles easily.
 1. **Filter the Title, Excerpt, or Image.** The plugin gives you three filters to modify the outputs in the widget: `fwp_page_title`, `fpw_excerpt`, and `fwp_featured_image`. The widget's title also goes through the `widget_title` filter.
   * Those comfortable writing filters can see the specifics in `fpw_widget.class.php`.
   * See the next FAQ for an example of adding a "Read More…" link.
-1. **Override the Widget's output template.** The widget output can be overridden by a template in any parent or child theme. Copy the `/fpw_views/` folder from thi plugin's folder to your theme's folder and modify `fpw_default.php` to your heart's content. The template itself contains additional information on what data is available to work with.
+1. **Override the Widget's output template.** The widget output can be overridden by a template in any parent or child theme. Copy the `/fpw_views/` folder from the plugin's folder to your theme's folder (or child theme folder!) and modify `fpw_default.php` to your heart's content. The template itself contains additional information on what data is available to work with.
 
-= I want add a "Read More…" link. =
-This may become a widget option some day, but for now, it's easy to add with a filter. Place it in your theme's `functions.php` file or in a [functionality plugin](http://justintadlock.com/archives/2011/02/02/creating-a-custom-functions-plugin-for-end-users):
+= Can I use HTML or a WYSIWYG/TinyMCE Editor with the Excerpt Field? =
+Install the [Rich Text Excerpts plugin](http://wordpress.org/extend/plugins/rich-text-excerpts/). This plugin will take note and display your nicely formatted excerpt.
+
+= How can I get a "Read More…" link? =
+This may become a widget option some day. For now, it's easy to add with a filter. Place this code in your theme's `functions.php` file or in a [functionality plugin](http://justintadlock.com/archives/2011/02/02/creating-a-custom-functions-plugin-for-end-users):
 
 `function test_func( $excerpt, $featured_page_id ) {
 	return $excerpt . ' <a href="' . get_permalink( $featured_page_id ) . '">Read More…</a>';
 }
 add_filter( 'fpw_excerpt', 'test_func', 10, 2 );`
+
+= How do I change the image's size? =
+Asked and answered in the support forum thread: ["Changing the default thumbnail size"](http://wordpress.org/support/topic/changing-the-default-thumbnail-size-1)
 
 = I need to support IE8 and my theme doesn't use HTML5 =
 If you are having trouble with this widget's layout in IE8, it may be due to the use of the `<article>` element in the widget. Double-check that your theme isn't using the HTML5 shiv/shim. If it's not, then adding the following to your theme's `functions.php` file may fix the issue ([snippet source](http://css-tricks.com/snippets/wordpress/html5-shim-in-functions-php/)):
@@ -100,12 +106,12 @@ function add_ie_html5_shim () {
 }
 add_action('wp_head', 'add_ie_html5_shim');`
 
-= This widget isn't what I want. =
+= This widget isn't what I want... =
 This widget is intended to be straightforward and avoid melting into "option soup." However, that means it might not be perfect for what you need.
 
-If you think the widget is *almost right*, double-check that can't use the one of the plugin's filters or the widget view template (see "I want to modify how the widget looks/works"). If that doesn't work, submit some feedback or suggest a feature in the support forums.
+If you think the widget is *almost right*, double-check that can't use the one of the plugin's filters or the widget view template (see "I want to modify how the widget looks/works"). If that doesn't work, [submit some feedback](http://mrwweb.com/feature-a-page-widget-plugin-wordpress/#gform_wrapper_4) or [vote on possible features](http://mrwweb.com/feature-a-page-widget-plugin-wordpress/#gform_wrapper_5) for future versions of the plugins. And of course, there's always [the support forum](http://wordpress.org/support/plugin/feature-a-page-widget).
 
-If this plugin is more than a little off, you might be looking for something more like [Posts in Sidebar](http://wordpress.org/extend/plugins/posts-in-sidebar/), [Query Posts Widget](http://wordpress.org/extend/plugins/query-posts/), [Featured Page Widget](http://wordpress.org/extend/plugins/featured-page-widget/), [Simple Featured Posts Widget](http://wordpress.org/extend/plugins/simple-featured-posts-widget/), or something else. That's fine.
+If this plugin is more than a little off, you might be looking for a different plugin like [Posts in Sidebar](http://wordpress.org/extend/plugins/posts-in-sidebar/), [Query Posts Widget](http://wordpress.org/extend/plugins/query-posts/), [Featured Page Widget](http://wordpress.org/extend/plugins/featured-page-widget/), or [Simple Featured Posts Widget](http://wordpress.org/extend/plugins/simple-featured-posts-widget/).
 
 = How do you make the "Featured page" select list look so cool? =
 
@@ -118,6 +124,12 @@ I'm using the [Chosen](http://harvesthq.github.com/chosen/) jQuery plugin. It's 
 3. Widget interface shows you which pages have featured images and excerpts.
 
 == Changelog ==
+
+= 1.1.0 =
+* Tested for WordPress 3.5 support.
+* Fixed i18n issues. Added `.pot` file and `/languages/` folder.
+* Only load admin scripts & styles on widgets page.
+* Added support for ["Rich Text Excerpts" plugin](http://wordpress.org/extend/plugins/rich-text-excerpts/).
 
 = 1.0.0 =
 * Public release into repository.
@@ -140,6 +152,9 @@ I'm using the [Chosen](http://harvesthq.github.com/chosen/) jQuery plugin. It's 
 * Thanks to awesome tester: [Christine Winckler](http://ChristineTheDesigner.com)
 
 == Upgrade Notice ==
+
+= 1.1.0 =
+* i18n fixes. Smarter admin JS. Support for "Rich Text Excerpts" plugin.
 
 = 1.0.0 =
 * Plugin's now in the repository. Upgrade for a few small CSS fixes.
