@@ -100,7 +100,7 @@ function fpw_register_widget() {
 
 // Activation, Upgrade, and Deactivation
 register_activation_hook( __FILE__, 'fpw_activate' );
-add_action( __FILE__, 'fpw_upgrade' );
+add_action( 'admin_init', 'fpw_upgrade' );
 register_uninstall_hook( __FILE__, 'fpw_uninstall' );
 
 // Load Scripts and Styles
