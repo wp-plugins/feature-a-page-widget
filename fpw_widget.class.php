@@ -136,11 +136,18 @@ class FPW_Widget extends WP_Widget {
 		if( $title )
 			$title = apply_filters( 'widget_title', $title );
 
+		// Let's make a post_class string
+		$post_class = get_post_class( 'hentry fpw-clearfix fpw-layout-' . esc_attr( $layout ), (int) $featured_page_id );
+		$post_classes = '';
+		foreach ($post_class as $class) {
+			$post_classes .= $class . ' ';
+		}
+
 		// see if there's a page title. if so, put it together nicely for use in the widget
 		if ( $featured_page->post_title ) {
 			$page_title = apply_filters( 'fpw_page_title', esc_attr( $featured_page->post_title ) );
 			$page_title_html = sprintf( 
-				'<h1 class="fpw-page-title">%1$s</h1>',
+				'<h1 class="fpw-page-title entry-title">%1$s</h1>',
 				sanitize_text_field( $page_title )
 			);
 		} else {
@@ -176,9 +183,10 @@ class FPW_Widget extends WP_Widget {
 				$image_size = 'fpw_square';
 				break;
 		}
+
 		// see if there is a post_thumbnail grab it and filter it
 		if ( has_post_thumbnail( $featured_page_id ) ) {
-			$featured_image = get_the_post_thumbnail( $featured_page_id, $image_size );
+			$featured_image = get_the_post_thumbnail( $featured_page_id, $image_size, array( 'class' => 'attachment-$size entry-image') );
 			$featured_image = apply_filters( 'fpw_featured_image', $featured_image, $featured_page_id );
 		} else {
 			$featured_image = null;

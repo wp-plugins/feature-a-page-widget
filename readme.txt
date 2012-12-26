@@ -35,7 +35,7 @@ This plugin creates multiple custom image sizes. If you use images that were upl
 * [Rate/Review the plugin](http://wordpress.org/support/view/plugin-reviews/feature-a-page-widget).
 
 = Themes Tested =
-Twenty Twelve, Twenty Eleven, Twenty Ten, P2, Kubrick (for old times' sake), Multiple Custom Themes
+Twenty Twelve, Twenty Eleven, Twenty Ten, P2, Kubrick (for old times' sake), Multiple Custom Themes. [Known theme incompatibilities.](http://wordpress.org/extend/plugins/feature-a-page-widget/other_notes/)
 
 == Installation ==
 
@@ -63,10 +63,11 @@ The widget gets its text from the "Excerpt" field on the page you are featuring.
 1. Fill it in.
 1. Update the page.
 
-= Where do I find the Featured Image or Excerpt fields? =
+= Where do I find the Featured Image or Excerpt fields? I don't see them. =
+The Featured Image and Excerpt fields are found on the Page editing screen of the Page you want to feature. If you don't see them:
 1. In the top right corner of any **Page**, click "Screen Options."
 1. From the menu that slides down, make sure the "Excerpt" and "Featured Image" are both checked.
-1. Done! WordPress remembers this choice on all pages.
+1. WordPress will remember this choice on all pages.
 
 = What are those icons in the "Select Page" drop down? / How can I tell if a page has a featured image or excerpt already? =
 When selecting the page to feature in the widget settings, the list of pages includes two icons. The first icon is the featured image, and the second is the excerpt. If the icon is "lit-up," that means that page has that piece of information. If both are lit-up, the page is ready for optimal use in the widget. See this interface in the "Screenshots" tab.
@@ -122,8 +123,14 @@ I'm using the [Chosen](http://harvesthq.github.com/chosen/) jQuery plugin. It's 
 1. Choose from three theme-agnostic layouts.
 2. No need to choke down "option soup."
 3. Widget interface shows you which pages have featured images and excerpts.
+4. Uses standard WordPress fields (Title, Featured Image, and Excerpt) that you already know and love.
 
 == Changelog ==
+
+= 1.1.1 =
+* Fixed version number and plugin update hook.
+* Added post classes & hAtom markup to widget view (see [thread](http://wordpress.org/support/topic/applying-a-ahover-featured-image-possible?replies=5)). If you have customized `fpw_default.php`, you will need to review changes to the template in this version to take advantage of new classes.
+* Added known incompatibilites list to "Other Notes" section.
 
 = 1.1.0 =
 * Tested for WordPress 3.5 support.
@@ -152,6 +159,8 @@ I'm using the [Chosen](http://harvesthq.github.com/chosen/) jQuery plugin. It's 
 * Thanks to awesome tester: [Christine Winckler](http://ChristineTheDesigner.com)
 
 == Upgrade Notice ==
+= 1.1.1 =
+* Improved widget markup & a few tiny fixes. Anyone who has customized fpw_default.php may want to integrate the new changes.
 
 = 1.1.0 =
 * i18n fixes. Smarter admin JS. Support for "Rich Text Excerpts" plugin.
@@ -163,6 +172,9 @@ I'm using the [Chosen](http://harvesthq.github.com/chosen/) jQuery plugin. It's 
  * Cool icons in the "Select page" interface plus fixes for two nasty bugs.
 
 == Roadmap ==
+
+= Known Theme Incompatibilities =
+* "Theme ID". [Support thread with fix.](http://wordpress.org/support/topic/text-not-wrapped-around-image?replies=4)
 
 = Philosophy =
 I'm open to adding more features, but the widget options _must_ remain straight-forward and quick to set up. Following the 80/20 rule, I'm hoping this widget will contain the 20% of useful features that 80% of people need.
