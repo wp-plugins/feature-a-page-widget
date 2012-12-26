@@ -13,7 +13,7 @@ jQuery(document).ready(function($) {
 
 	// Fire off chosen on save-widget callback, else the vanilla select reappears.
 	//Thanks http://www.johngadbois.com/adding-your-own-callbacks-to-wordpress-ajax-requests/
-	jQuery(document).ajaxSuccess(function(e, xhr, settings) {
+	$(document).ajaxSuccess(function(e, xhr, settings) {
 		var widget_id_base = 'fpw_widget';
 
 		if(settings.data.search('action=save-widget') != -1 && settings.data.search('id_base=' + widget_id_base) != -1) {
