@@ -4,7 +4,7 @@ Donate link: https://www.networkforgood.org/donation/MakeDonation.aspx?ORGID2=52
 Tags: Widget, Widgets, Sidebar, Page, Pages, Featured Page, Thumbnail, Featured Image, Content, Link, Post Thumbnail, Excerpt, Simple
 Requires at least: 3.0.0
 Tested up to: 3.5
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -129,7 +129,7 @@ I'm using the [Chosen](http://harvesthq.github.com/chosen/) jQuery plugin. It's 
 
 = 1.1.1 =
 * Fixed version number and plugin update hook.
-* Added post classes & hAtom markup to widget view (see [thread](http://wordpress.org/support/topic/applying-a-ahover-featured-image-possible?replies=5)). If you have customized `fpw_default.php`, you will need to review changes to the template in this version to take advantage of new classes.
+* Added post classes & hAtom markup to widget view (see [thread](http://wordpress.org/support/topic/applying-a-ahover-featured-image-possible?replies=5)). If you have customized `fpw_default.php`, review changes to the template (see [diff #644501](http://plugins.trac.wordpress.org/changeset/644501#file1), lines 31-32, 37, 66) and update your copy to take advantage of new classes.
 * Added known incompatibilites list to "Other Notes" section.
 
 = 1.1.0 =
@@ -160,7 +160,7 @@ I'm using the [Chosen](http://harvesthq.github.com/chosen/) jQuery plugin. It's 
 
 == Upgrade Notice ==
 = 1.1.1 =
-* Improved widget markup & a few tiny fixes. Anyone who has customized fpw_default.php may want to integrate the new changes.
+* Improved widget markup & a few tiny fixes. Anyone who has customized fpw_default.php may want to integrate the new changes (see changelog for more details).
 
 = 1.1.0 =
 * i18n fixes. Smarter admin JS. Support for "Rich Text Excerpts" plugin.
