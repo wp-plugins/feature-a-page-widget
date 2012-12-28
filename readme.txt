@@ -4,7 +4,7 @@ Donate link: https://www.networkforgood.org/donation/MakeDonation.aspx?ORGID2=52
 Tags: Widget, Widgets, Sidebar, Page, Pages, Featured Page, Thumbnail, Featured Image, Content, Link, Post Thumbnail, Excerpt, Simple
 Requires at least: 3.0.0
 Tested up to: 3.5
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -126,6 +126,8 @@ I'm using the [Chosen](http://harvesthq.github.com/chosen/) jQuery plugin. It's 
 4. Uses standard WordPress fields (Title, Featured Image, and Excerpt) that you already know and love.
 
 == Changelog ==
+= 1.1.2 =
+* Fixed image-size class.
 
 = 1.1.1 =
 * Fixed version number and plugin update hook.
@@ -159,17 +161,20 @@ I'm using the [Chosen](http://harvesthq.github.com/chosen/) jQuery plugin. It's 
 * Thanks to awesome tester: [Christine Winckler](http://ChristineTheDesigner.com)
 
 == Upgrade Notice ==
+= 1.1.2 =
+Minor bug fix for version 1.1.1 update.
+
 = 1.1.1 =
-* Improved widget markup & a few tiny fixes. Anyone who has customized fpw_default.php may want to integrate the new changes (see changelog for more details).
+Improved widget markup & a few tiny fixes. Anyone who has customized fpw_default.php may want to integrate the new changes (see changelog for more details).
 
 = 1.1.0 =
-* i18n fixes. Smarter admin JS. Support for "Rich Text Excerpts" plugin.
+i18n fixes. Smarter admin JS. Support for "Rich Text Excerpts" plugin.
 
 = 1.0.0 =
-* Plugin's now in the repository. Upgrade for a few small CSS fixes.
+Plugin's now in the repository. Upgrade for a few small CSS fixes.
 
 = 0.9.5 =
- * Cool icons in the "Select page" interface plus fixes for two nasty bugs.
+Cool icons in the "Select page" interface plus fixes for two nasty bugs.
 
 == Roadmap ==
 

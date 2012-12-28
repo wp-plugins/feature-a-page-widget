@@ -3,7 +3,7 @@
 * Plugin Name: Feature a Page Widget
 * Description: Feature a single page in any sidebar.
 * Plugin URI: http://mrwweb.com/feature-a-page-widget-plugin-wordpress/
-* Version: 1.1.1
+* Version: 1.1.2
 * Author: Mark Root-Wiley (MRWweb)
 * Author URI: http://mrwweb.com
 * Donate Link: https://www.networkforgood.org/donation/MakeDonation.aspx?ORGID2=522061398
@@ -30,7 +30,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 // because...
 defined('ABSPATH') or die("Cannot access pages directly.");
 
-define('FPW_VERSION', '1.1.1');
+define('FPW_VERSION', '1.1.2');
 
 function fpw_update_version() {
 	// Update the Plugin Version if it doesn't exist or is out of sync
@@ -109,7 +109,7 @@ add_action( 'wp_enqueue_scripts', 'fpw_styles' );
 
 // Enable Excerpts, Post Thumbnails, and Custom Image Sizes. Load textdomain
 add_action( 'init', 'fpw_page_supports', 20 );
-add_action('plugins_loaded', 'fpw_textdomain');
+add_action( 'plugins_loaded', 'fpw_textdomain' );
 
 // Register the widget class
 add_action( 'widgets_init', 'fpw_register_widget' );
