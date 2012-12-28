@@ -186,7 +186,7 @@ class FPW_Widget extends WP_Widget {
 
 		// see if there is a post_thumbnail grab it and filter it
 		if ( has_post_thumbnail( $featured_page_id ) ) {
-			$featured_image = get_the_post_thumbnail( $featured_page_id, $image_size, array( 'class' => 'attachment-$size entry-image') );
+			$featured_image = get_the_post_thumbnail( $featured_page_id, $image_size );
 			$featured_image = apply_filters( 'fpw_featured_image', $featured_image, $featured_page_id );
 		} else {
 			$featured_image = null;
