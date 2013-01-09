@@ -187,6 +187,9 @@ I'm open to adding more features, but the widget options _must_ remain straight-
 = 1.5.0 =
 * New widget options added if/when a consensus arises from feedback.
 
+= 1.3.0 =
+* Improved usability. More UI cues/help text. Contextual help if deemed useful.
+
 = 1.0.0 =
 * First Official WordPress.org Repository release.
 * Stable. Simple.
