@@ -32,6 +32,7 @@ class FPW_Widget extends WP_Widget {
 			'hierarchical' => 0,
 			'post_status' => 'publish'
 		));
+		// make blank first option
 		$page_select_list = array( '' => '' );
 		foreach( $pages_array as $page ){
 			$page_select_list[$page->ID] = esc_attr( $page->post_title );
@@ -59,15 +60,40 @@ class FPW_Widget extends WP_Widget {
 						$featured_image = 'featured-image';
 					if( has_excerpt( $page_id) )
 						$excerpt = 'excerpt';
-					printf( '<option class="%4$s %5$s" value="%1$s" %3$s>%2$s</option>',
+					printf( '<option class="%4$s %5$s" value="%1$s" data-edit-link="%6$s" %3$s>%2$s</option>',
 						$page_id,
 						$page_title,
 						selected( $featured_page_id, $page_id, false ),
 						$featured_image,
-						$excerpt
+						$excerpt,
+						esc_url( get_edit_post_link( $page_id ) )
 					);
 				} ?>
 			</select>
+		</p>
+
+		<noscript>
+			<p>This widget will display the Title, Featured Image, and Excerpt from the page you select. Make sure those fields are set for any page you wish to feature.</p>
+		</noscript>
+
+		<p class="fpw-page-status">
+
+			<span class="fpw-widget-heading">Page Status: <a href="#" class="fpw-help-button"><img alt="<?php _e( 'Help', 'fapw' ); ?>" src="<?php echo esc_url( plugins_url( '/img/question-white.png', __FILE__ ) ); ?>" /></a></span>
+			
+			<span class="fpw-page-status-image">
+				<?php _e( 'Featured Image', 'fapw' ); ?> 
+				<img class="fpw-page-status-set" src="<?php echo esc_url( plugins_url( '/img/tick.png', __FILE__ ) ); ?>" alt="<?php _e( 'Set', 'fapw' ); ?>" /><img class="fpw-page-status-missing" src="<?php echo esc_url( plugins_url( '/img/exclamation-red.png', __FILE__ ) ); ?>" alt="<?php _e( 'Missing', 'fapw' ); ?>" />
+			</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+
+			<span class="fpw-page-status-excerpt">
+				<?php _e( 'Excerpt', 'fapw' ); ?> 
+				<img class="fpw-page-status-set" src="<?php echo esc_url( plugins_url( '/img/tick.png', __FILE__ ) ); ?>" alt="<?php _e( 'Set', 'fapw' ); ?>" /><img class="fpw-page-status-missing" src="<?php echo esc_url( plugins_url( '/img/exclamation-red.png', __FILE__ ) ); ?>" alt="<?php _e( 'Missing', 'fapw' ); ?>" />
+			</span>&nbsp;&nbsp;
+			
+			<span class="fpw-page-status-edit">
+				<a class="fpw-page-status-edit-link" href="" target="_blank"><img alt="<?php _e( 'Edit Page in New Window', 'fapw' ); ?>" title="<?php _e( 'Edit Page in New Window', 'fapw' ); ?>" src="<?php echo esc_url( plugins_url( '/img/pencil.png', __FILE__ ) ); ?>" /></a>
+			</span>
+
 		</p>
 
 		<p class="fpw-layouts">
@@ -157,10 +183,13 @@ class FPW_Widget extends WP_Widget {
 
 		// if there's an excerpt, grab it and filter
 		if( $featured_page->post_excerpt ) {
-			$excerpt = esc_html( $featured_page->post_excerpt );
+			$excerpt = $featured_page->post_excerpt;
 			$excerpt = apply_filters( 'fpw_excerpt', $excerpt, $featured_page_id );
-			if( class_exists( 'RichTextExcerpts' ) )
+			if( class_exists( 'RichTextExcerpts' ) ) {
 				$excerpt = wp_kses_decode_entities( $excerpt );
+			} else {
+				$excerpt = esc_html( $excerpt );
+			}
 		} else {
 			$excerpt = null;
 		}

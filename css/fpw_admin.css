@@ -20,6 +20,48 @@
 	opacity: 0;
 }
 
+
+/* Page Status Changes
+ * ------------------------------------------------------------- */
+/* General styles */
+.fpw-page-status {
+	display: none;
+	margin-bottom: 1.5em !important;
+}
+/* ^^^ we'll display this with javascript as it requires that to update. there's a <noscript> alternative help message */
+
+.fpw-page-status img {
+	vertical-align: bottom;
+}
+
+/* dynamic colors */
+.fpw-page-status-excerpt,
+.fpw-page-status-image {
+	font-weight: bold;
+	color: #A91616;
+}
+
+.featured-image .fpw-page-status-image,
+.excerpt .fpw-page-status-excerpt {
+	color: #28AB38;
+}
+
+/* dynamic icons */
+.fpw-page-status-set {
+	display: none;
+}
+
+.featured-image .fpw-page-status-image .fpw-page-status-set,
+.excerpt .fpw-page-status-excerpt .fpw-page-status-set {
+	display: inline;
+}
+
+.featured-image .fpw-page-status-image .fpw-page-status-missing,
+.excerpt .fpw-page-status-excerpt .fpw-page-status-missing {
+	display: none;
+}
+
+
  /* Layouts Preview
  * ------------------------------------------------------------- */
 .fpw-layouts {
@@ -59,12 +101,12 @@
  * ------------------------------------------------------------- */
 .chzn-container .chzn-drop li {
 	position: relative;
-	padding: 5px 6px 5px 40px;
+	padding: 5px 40px 5px 5px;
 }
 
 .chzn-drop li:before {
 	content:' '; display: block; position: absolute;
-	top:5px; left:5px;
+	top: 5px; right: 5px;
 	width: 30px; height:15px;
 	background: transparent url(../img/fpwFieldsPreview.png) no-repeat top left;
 }
@@ -93,4 +135,20 @@
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+
+/* Contextual Help
+ * ------------------------------------------------------------- */
+#tab-panel-fpw_help_tab img {
+	vertical-align: bottom;
+}
+
+#tab-panel-fpw_help_tab a[target="_blank"]:after {
+	display: inline-block;
+	content: ' ';
+	width: 16px;
+	height: 16px;
+	vertical-align: bottom;
+	background: url(../img/external_link.png) right center no-repeat;
 }

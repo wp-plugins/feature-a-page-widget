@@ -1,4 +1,4 @@
-﻿=== Feature A Page Widget ===
+=== Feature A Page Widget ===
 Contributors: mrwweb
 Donate link: https://www.networkforgood.org/donation/MakeDonation.aspx?ORGID2=522061398
 Tags: Widget, Widgets, Sidebar, Page, Pages, Featured Page, Thumbnail, Featured Image, Content, Link, Post Thumbnail, Excerpt, Simple
@@ -27,7 +27,7 @@ This plugin enables Featured Images (aka "Post Thumbnails") and Excerpts for **P
 1. Save the widget. Admire your handiwork.
 
 = A Word About Image Sizes =
-This plugin creates multiple custom image sizes. If you use images that were uploaded to the  media library before you installed this plugin, you'd be wise to use a plugin like [Regenerate Thumbnails](http://wordpress.org/extend/plugins/regenerate-thumbnails/) or [Dynamic Image Resizer](http://wordpress.org/extend/plugins/dynamic-image-resizer/).
+This plugin creates multiple custom image sizes. If you use images that were uploaded to the  media library before you installed this plugin, you'd be wise to use a plugin like [Regenerate Thumbnails](http://wordpress.org/extend/plugins/regenerate-thumbnails/) or [Dynamic Image Resizer](http://wordpress.org/extend/plugins/regenerate-thumbnails/).
 
 = Tell Me How to Make The Plugin Better =
 * [Vote on the options](http://mrwweb.com/feature-a-page-widget-plugin-wordpress/#gform_wrapper_5) you'd like to see in future versions of the plugin.
@@ -76,7 +76,7 @@ When selecting the page to feature in the widget settings, the list of pages inc
 The widget offers three ways to customize its design and output. The right method for you depends on what you want to accomplish and what you're comfortable doing technically.
 
 1. **Write your own CSS rules.** The plugin's CSS selectors have as low a priority as possible, so you should be able to override styles easily.
-1. **Filter the Title, Excerpt, or Image.** The plugin gives you three filters to modify the outputs in the widget: `fwp_page_title`, `fpw_excerpt`, and `fwp_featured_image`. The widget's title also goes through the `widget_title` filter.
+1. **Filter the Title, Excerpt, or Image.** The plugin gives you three filters to modify the outputs in the widget: `fpw_page_title`, `fpw_excerpt`, and `fpw_featured_image`. The widget's title also goes through the `widget_title` filter.
   * Those comfortable writing filters can see the specifics in `fpw_widget.class.php`.
   * See the next FAQ for an example of adding a "Read More…" link.
 1. **Override the Widget's output template.** The widget output can be overridden by a template in any parent or child theme. Copy the `/fpw_views/` folder from the plugin's folder to your theme's folder (or child theme folder!) and modify `fpw_default.php` to your heart's content. The template itself contains additional information on what data is available to work with.
@@ -126,6 +126,12 @@ I'm using the [Chosen](http://harvesthq.github.com/chosen/) jQuery plugin. It's 
 4. Uses standard WordPress fields (Title, Featured Image, and Excerpt) that you already know and love.
 
 == Changelog ==
+= 1.2.0 =
+* New "Page Status" instant feedback determines whether the featured image and excerpt are set for selected page.
+* New contextual help. (And access to it via help button in widget settings.)
+* Fixed Rich Text Excerpts support
+* Minor JS improvement: Only reactivate "chosen" script on saved widget instance.
+
 = 1.1.2 =
 * Fixed image-size class.
 
@@ -161,6 +167,9 @@ I'm using the [Chosen](http://harvesthq.github.com/chosen/) jQuery plugin. It's 
 * Thanks to awesome tester: [Christine Winckler](http://ChristineTheDesigner.com)
 
 == Upgrade Notice ==
+= 1.2.0 =
+UI improvements. Contextual Help. Rich Text Excerpt compatibility fix. JS improvements.
+
 = 1.1.2 =
 Minor bug fix for version 1.1.1 update.
 
@@ -186,9 +195,6 @@ I'm open to adding more features, but the widget options _must_ remain straight-
 
 = 1.5.0 =
 * New widget options added if/when a consensus arises from feedback.
-
-= 1.3.0 =
-* Improved usability. More UI cues/help text. Contextual help if deemed useful.
 
 = 1.0.0 =
 * First Official WordPress.org Repository release.
