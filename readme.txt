@@ -87,10 +87,10 @@ Install the [Rich Text Excerpts plugin](http://wordpress.org/extend/plugins/rich
 = How can I get a "Read More…" link? =
 This may become a widget option some day. For now, it's easy to add with a filter. Place this code in your theme's `functions.php` file or in a [functionality plugin](http://justintadlock.com/archives/2011/02/02/creating-a-custom-functions-plugin-for-end-users):
 
-`function test_func( $excerpt, $featured_page_id ) {
+`function fapw_custom_read_more_link( $excerpt, $featured_page_id ) {
 	return $excerpt . ' <a href="' . get_permalink( $featured_page_id ) . '">Read More…</a>';
 }
-add_filter( 'fpw_excerpt', 'test_func', 10, 2 );`
+add_filter( 'fpw_excerpt', 'fapw_custom_read_more_link', 10, 2 );`
 
 = How do I change the image's size? =
 Asked and answered in the support forum thread: ["Changing the default thumbnail size"](http://wordpress.org/support/topic/changing-the-default-thumbnail-size-1)
