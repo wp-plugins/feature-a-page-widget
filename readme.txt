@@ -4,7 +4,7 @@ Donate link: https://www.networkforgood.org/donation/MakeDonation.aspx?ORGID2=52
 Tags: Widget, Widgets, Sidebar, Page, Pages, Featured Page, Thumbnail, Featured Image, Content, Link, Post Thumbnail, Excerpt, Simple
 Requires at least: 3.0.0
 Tested up to: 3.5
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,7 +35,7 @@ This plugin creates multiple custom image sizes. If you use images that were upl
 * [Rate/Review the plugin](http://wordpress.org/support/view/plugin-reviews/feature-a-page-widget).
 
 = Themes Tested =
-Twenty Twelve, Twenty Eleven, Twenty Ten, P2, Kubrick (for old times' sake), Multiple Custom Themes. [Known theme incompatibilities.](http://wordpress.org/extend/plugins/feature-a-page-widget/other_notes/)
+Twenty Twelve, Twenty Eleven, Twenty Ten, P2, Kubrick (for old times' sake), Multiple Custom Themes. [Known theme & plugin incompatibilities.](http://wordpress.org/extend/plugins/feature-a-page-widget/other_notes/)
 
 == Installation ==
 
@@ -87,10 +87,10 @@ Install the [Rich Text Excerpts plugin](http://wordpress.org/extend/plugins/rich
 = How can I get a "Read More…" link? =
 This may become a widget option some day. For now, it's easy to add with a filter. Place this code in your theme's `functions.php` file or in a [functionality plugin](http://justintadlock.com/archives/2011/02/02/creating-a-custom-functions-plugin-for-end-users):
 
-`function test_func( $excerpt, $featured_page_id ) {
-	return $excerpt . ' <a href="' . get_permalink( $featured_page_id ) . '">Read More…</a>';
+`function fapw_custom_read_more_link( $excerpt, $featured_page_id ) {
+    return $excerpt . ' <a href="' . get_permalink( $featured_page_id ) . '">Read More…</a>';
 }
-add_filter( 'fpw_excerpt', 'test_func', 10, 2 );`
+add_filter( 'fpw_excerpt', 'fapw_custom_read_more_link', 10, 2 );`
 
 = How do I change the image's size? =
 Asked and answered in the support forum thread: ["Changing the default thumbnail size"](http://wordpress.org/support/topic/changing-the-default-thumbnail-size-1)
@@ -126,6 +126,11 @@ I'm using the [Chosen](http://harvesthq.github.com/chosen/) jQuery plugin. It's 
 4. Uses standard WordPress fields (Title, Featured Image, and Excerpt) that you already know and love.
 
 == Changelog ==
+= 1.2.1 =
+* "Read More" filter fix.
+* Accessibility mode invisible "Page Select List" fix.
+* Upgraded to most recent version of Chosen script. (And included Chosen MIT License for clarity.)
+
 = 1.2.0 =
 * New "Page Status" instant feedback determines whether the featured image and excerpt are set for selected page.
 * New contextual help. (And access to it via help button in widget settings.)
@@ -167,6 +172,9 @@ I'm using the [Chosen](http://harvesthq.github.com/chosen/) jQuery plugin. It's 
 * Thanks to awesome tester: [Christine Winckler](http://ChristineTheDesigner.com)
 
 == Upgrade Notice ==
+= 1.2.1 =
+"Read More" fix. Accessibility mode fix. Upgraded "Chosen" script.
+
 = 1.2.0 =
 UI improvements. Contextual Help. Rich Text Excerpt compatibility fix. JS improvements.
 
@@ -185,21 +193,13 @@ Plugin's now in the repository. Upgrade for a few small CSS fixes.
 = 0.9.5 =
 Cool icons in the "Select page" interface plus fixes for two nasty bugs.
 
-== Roadmap ==
+== Other Notes ==
 
 = Known Theme Incompatibilities =
 * "Theme ID". [Support thread with fix.](http://wordpress.org/support/topic/text-not-wrapped-around-image?replies=4)
 
-= Philosophy =
-I'm open to adding more features, but the widget options _must_ remain straight-forward and quick to set up. Following the 80/20 rule, I'm hoping this widget will contain the 20% of useful features that 80% of people need.
+= Known Plugin Incompatibilities =
+* "qTranslate". Escapes translations so they don't work. Will hopefully fix in the future.
 
-= 1.5.0 =
-* New widget options added if/when a consensus arises from feedback.
-
-= 1.0.0 =
-* First Official WordPress.org Repository release.
-* Stable. Simple.
-
-= 0.9.5 =
-* Beta Release. Bug fixes from Alpha.
-* Added icons in "Select Page" list to show pages with featured image & excerpt
+= Plugin Philosophy =
+I'm open to adding more features, but the widget options _must_ remain straight-forward and quick to set up. Following the 80/20 rule, I'm hoping this widget will contain the 20% of useful features that 80% of people need. To effect the direction of the plugin, [view and vote on feature and option requests](http://mrwweb.com/feature-a-page-widget-plugin-wordpress/#gform_wrapper_5).

@@ -184,12 +184,12 @@ class FPW_Widget extends WP_Widget {
 		// if there's an excerpt, grab it and filter
 		if( $featured_page->post_excerpt ) {
 			$excerpt = $featured_page->post_excerpt;
-			$excerpt = apply_filters( 'fpw_excerpt', $excerpt, $featured_page_id );
 			if( class_exists( 'RichTextExcerpts' ) ) {
 				$excerpt = wp_kses_decode_entities( $excerpt );
 			} else {
 				$excerpt = esc_html( $excerpt );
 			}
+			$excerpt = apply_filters( 'fpw_excerpt', $excerpt, $featured_page_id );
 		} else {
 			$excerpt = null;
 		}

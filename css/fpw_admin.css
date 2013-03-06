@@ -20,6 +20,13 @@
 	opacity: 0;
 }
 
+/* Fallback for no JS or accessibility mode */
+.no-js .fpw-page-select,
+.widgets_access .fpw-page-select {
+	visibility: visible;
+	opacity: 1;
+}
+
 
 /* Page Status Changes
  * ------------------------------------------------------------- */
