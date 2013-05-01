@@ -171,7 +171,7 @@ class FPW_Widget extends WP_Widget {
 
 		// see if there's a page title. if so, put it together nicely for use in the widget
 		if ( $featured_page->post_title ) {
-			$page_title = apply_filters( 'fpw_page_title', esc_attr( $featured_page->post_title ) );
+			$page_title = apply_filters( 'fpw_page_title', esc_attr__( $featured_page->post_title ) );
 			$page_title_html = sprintf( 
 				'<h1 class="fpw-page-title entry-title">%1$s</h1>',
 				sanitize_text_field( $page_title )
@@ -184,11 +184,7 @@ class FPW_Widget extends WP_Widget {
 		// if there's an excerpt, grab it and filter
 		if( $featured_page->post_excerpt ) {
 			$excerpt = $featured_page->post_excerpt;
-			if( class_exists( 'RichTextExcerpts' ) ) {
-				$excerpt = wp_kses_decode_entities( $excerpt );
-			} else {
-				$excerpt = esc_html( $excerpt );
-			}
+			$excerpt = apply_filters( 'the_excerpt', $excerpt );
 			$excerpt = apply_filters( 'fpw_excerpt', $excerpt, $featured_page_id );
 		} else {
 			$excerpt = null;
@@ -224,7 +220,6 @@ class FPW_Widget extends WP_Widget {
 		/** 
 		 * Widget Output Begins
 		 *----------------------------------------------------*/
-
 		// use a version of the widget template from the theme if it exists
 		// otherwise, use the default widget template from the plugin folder
 		$fpw_template = locate_template( 'fpw_views/fpw_default.php', false, true );

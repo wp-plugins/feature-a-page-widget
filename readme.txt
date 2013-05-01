@@ -2,9 +2,9 @@
 Contributors: mrwweb
 Donate link: https://www.networkforgood.org/donation/MakeDonation.aspx?ORGID2=522061398
 Tags: Widget, Widgets, Sidebar, Page, Pages, Featured Page, Thumbnail, Featured Image, Content, Link, Post Thumbnail, Excerpt, Simple
-Requires at least: 3.3.0
-Tested up to: 3.5
-Stable tag: 1.2.1
+Requires at least: 3.0.0
+Tested up to: 3.6-beta2
+Stable tag: 1.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -82,7 +82,7 @@ The widget offers three ways to customize its design and output. The right metho
 1. **Override the Widget's output template.** The widget output can be overridden by a template in any parent or child theme. Copy the `/fpw_views/` folder from the plugin's folder to your theme's folder (or child theme folder!) and modify `fpw_default.php` to your heart's content. The template itself contains additional information on what data is available to work with.
 
 = Can I use HTML or a WYSIWYG/TinyMCE Editor with the Excerpt Field? =
-Install the [Rich Text Excerpts plugin](http://wordpress.org/extend/plugins/rich-text-excerpts/). This plugin will take note and display your nicely formatted excerpt.
+Install the [Rich Text Excerpts plugin](http://wordpress.org/extend/plugins/rich-text-excerpts/) or [Advanced Excerpt](http://wordpress.org/extend/plugins/advanced-excerpt/) plugins. Either plugin should take note and display your nicely formatted excerpt.
 
 = How can I get a "Read More…" link? =
 This may become a widget option some day. For now, it's easy to add with a filter. Place this code in your theme's `functions.php` file or in a [functionality plugin](http://justintadlock.com/archives/2011/02/02/creating-a-custom-functions-plugin-for-end-users):
@@ -126,6 +126,12 @@ I'm using the [Chosen](http://harvesthq.github.com/chosen/) jQuery plugin. It's 
 4. Uses standard WordPress fields (Title, Featured Image, and Excerpt) that you already know and love.
 
 == Changelog ==
+= 1.2.2 =
+* [New] Apply `the_excerpt` and `get_the_excerpt` filters to excerpt in widget.
+* [New] First-pass at qTranslate support
+* [New] Tested with Advanced Excerpt plugin
+* Tested with 3.6-beta2
+
 = 1.2.1 =
 * "Read More" filter fix.
 * Accessibility mode invisible "Page Select List" fix.
@@ -172,6 +178,9 @@ I'm using the [Chosen](http://harvesthq.github.com/chosen/) jQuery plugin. It's 
 * Thanks to awesome tester: [Christine Winckler](http://ChristineTheDesigner.com)
 
 == Upgrade Notice ==
+= 1.2.2 =
+* Minor Update: qTranslate support & better excerpt handling.
+
 = 1.2.1 =
 "Read More" fix. Accessibility mode fix. Upgraded "Chosen" script.
 
@@ -199,7 +208,7 @@ Cool icons in the "Select page" interface plus fixes for two nasty bugs.
 * "Theme ID". [Support thread with fix.](http://wordpress.org/support/topic/text-not-wrapped-around-image?replies=4)
 
 = Known Plugin Incompatibilities =
-* "qTranslate". Escapes translations so they don't work. Will hopefully fix in the future.
+* Tell me if you know of any!
 
 = Plugin Philosophy =
 I'm open to adding more features, but the widget options _must_ remain straight-forward and quick to set up. Following the 80/20 rule, I'm hoping this widget will contain the 20% of useful features that 80% of people need. To effect the direction of the plugin, [view and vote on feature and option requests](http://mrwweb.com/feature-a-page-widget-plugin-wordpress/#gform_wrapper_5).
