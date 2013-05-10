@@ -1,6 +1,13 @@
 <?php
 
-/**
+/*
+ * DO NOT MODIFY THIS FILE!
+ * Instead, copy the /fpw_views/ folder to your active theme's folder.
+ * Modify the file in the theme's folder and the plugin will use it.
+ * See: http://wordpress.org/extend/plugins/feature-a-page-widget/faq/
+ */
+
+/*
  * A LIST OF AVAILABLE VARIABLES
  * $title - The "Widget Title" field value
  * $before_widget / $after_widget / $before_title / $after_title - wrapper markup defined in theme's functions.php file
@@ -63,7 +70,7 @@ echo '</a>';
 
 if( $excerpt ) {
 	printf(
-		'<p class="fpw-excerpt entry-summary">%1$s</p>',
+		'<div class="fpw-excerpt entry-summary">%1$s</div>',
 		wp_kses_post( $excerpt )
 	);
 }

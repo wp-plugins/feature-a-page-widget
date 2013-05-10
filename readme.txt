@@ -4,7 +4,7 @@ Donate link: https://www.networkforgood.org/donation/MakeDonation.aspx?ORGID2=52
 Tags: Widget, Widgets, Sidebar, Page, Pages, Featured Page, Thumbnail, Featured Image, Content, Link, Post Thumbnail, Excerpt, Simple
 Requires at least: 3.0.0
 Tested up to: 3.6-beta2
-Stable tag: 1.2.2
+Stable tag: 1.2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -126,6 +126,10 @@ I'm using the [Chosen](http://harvesthq.github.com/chosen/) jQuery plugin. It's 
 4. Uses standard WordPress fields (Title, Featured Image, and Excerpt) that you already know and love.
 
 == Changelog ==
+= 1.2.3 =
+* [Fix] Modification to widget HTML. Wrap excerpt in div element, not paragraph. Developers: If you have changed the `fpw_default.php` files, please make this change in line 66. Overly-specific CSS selectors (e.g. `p.fpw-excerpt`) may break on this change.
+* [Notice] Developers, please copy the /fpw_views/ folder to your theme rather than modifying the core plugin file.
+
 = 1.2.2 =
 * [New] Apply `the_excerpt` and `get_the_excerpt` filters to excerpt in widget.
 * [New] First-pass at qTranslate support
@@ -178,8 +182,11 @@ I'm using the [Chosen](http://harvesthq.github.com/chosen/) jQuery plugin. It's 
 * Thanks to awesome tester: [Christine Winckler](http://ChristineTheDesigner.com)
 
 == Upgrade Notice ==
+= 1.2.3 =
+Very minor widget HTML fix. See changelog if you've customized `fpw_default.php`. Please stop hacking the layout file :)
+
 = 1.2.2 =
-* Minor Update: qTranslate support & better excerpt handling.
+Minor Update: qTranslate support & better excerpt handling.
 
 = 1.2.1 =
 "Read More" fix. Accessibility mode fix. Upgraded "Chosen" script.

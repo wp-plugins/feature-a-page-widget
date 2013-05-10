@@ -1,154 +1,52 @@
-# Copyright (C) 2013 Feature a Page Widget
+# Copyright (C) 2012 Feature a Page Widget
 # This file is distributed under the same license as the Feature a Page Widget package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Feature a Page Widget 1.2.0\n"
+"Project-Id-Version: Feature a Page Widget 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/feature-a-page-widget\n"
-"POT-Creation-Date: 2013-02-11 22:27:21+00:00\n"
+"POT-Creation-Date: 2012-11-14 14:45:41+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2012-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#. #-#-#-#-#  plugin.pot (Feature a Page Widget 1.2.0)  #-#-#-#-#
+#. #-#-#-#-#  plugin.pot (Feature a Page Widget 1.0.0)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
-#: feature-a-page-widget.php:110 fpw_widget.class.php:9
+#: fpw_widget.class.php:9
 msgid "Feature a Page Widget"
-msgstr ""
-
-#: feature-a-page-widget.php:111
-msgid "Feature a Page Widget Help"
-msgstr ""
-
-#: feature-a-page-widget.php:111
-msgid ""
-"The Feature a Page Widget uses the \"Featured Image\" and \"Excerpt\" fields "
-"<strong>which are saved and edited on the page you want to feature</strong>. "
-"The widget indicates whether those fields are set in the \"Page to Feature\" "
-"select list (%1$s) and widget form (%2$s / %3$s)."
-msgstr ""
-
-#: feature-a-page-widget.php:111
-msgid ""
-" If you need to add or modify the Featured Image or Excerpt, click the edit "
-"link (%4$s) in the widget settings form to edit the page in a new tab or "
-"window."
-msgstr ""
-
-#: feature-a-page-widget.php:111
-msgid "Frequently Asked Questions &amp; Support"
-msgstr ""
-
-#: feature-a-page-widget.php:111
-msgid ""
-"For information about setting the Excerpt and Featured Image, changing the "
-"widget's look &amp; feel, modifying the widget output, and more, please "
-"visit the plugin's <a target=\"_blank\" href=\"http://wordpress.org/extend/"
-"plugins/feature-a-page-widget/faq/\">FAQ page</a> or <a href=\"%5$s\" target="
-"\"_blank\">readme.txt</a>."
-msgstr ""
-
-#: feature-a-page-widget.php:111
-msgid ""
-"If you are still having problems with the widget after reading the above "
-"help text and plugin FAQ, you can open a thread on <a href=\"http://"
-"wordpress.org/support/plugin/feature-a-page-widget\" target=\"_blank\">the "
-"plugin's support forum</a>."
-msgstr ""
-
-#: feature-a-page-widget.php:111
-msgid "Feedback, &amp; Future Versions"
-msgstr ""
-
-#: feature-a-page-widget.php:111
-msgid ""
-"Feature additions and improvements to the plugin are primarily made in "
-"response to user feedback. Once you have used the plugin, please consider:"
-msgstr ""
-
-#: feature-a-page-widget.php:111
-msgid "Voting for and suggesting new features"
-msgstr ""
-
-#: feature-a-page-widget.php:111
-msgid "Submitting feedback to the author"
-msgstr ""
-
-#: feature-a-page-widget.php:111
-msgid "Rating and reviewing the plugin on WordPress.org"
-msgstr ""
-
-#: feature-a-page-widget.php:112
-msgid "Featured Image and Excerpt are present icon"
-msgstr ""
-
-#: feature-a-page-widget.php:113
-msgid "Set Icon"
-msgstr ""
-
-#: feature-a-page-widget.php:114
-msgid "Missing Icon"
-msgstr ""
-
-#: feature-a-page-widget.php:115
-msgid "pencil icon"
 msgstr ""
 
 #: fpw_widget.class.php:10
 msgid "A widget to feature a single page"
 msgstr ""
 
-#: fpw_widget.class.php:46
+#: fpw_widget.class.php:45
 msgid "Widget Title"
 msgstr ""
 
-#: fpw_widget.class.php:53
+#: fpw_widget.class.php:52
 msgid "Page to feature:"
 msgstr ""
 
-#: fpw_widget.class.php:55
+#: fpw_widget.class.php:54
 msgid "Select Featured Page&hellip;"
 msgstr ""
 
-#: fpw_widget.class.php:81
-msgid "Help"
-msgstr ""
-
-#: fpw_widget.class.php:84
-msgid "Featured Image"
-msgstr ""
-
-#: fpw_widget.class.php:85 fpw_widget.class.php:90
-msgid "Set"
-msgstr ""
-
-#: fpw_widget.class.php:85 fpw_widget.class.php:90
-msgid "Missing"
-msgstr ""
-
-#: fpw_widget.class.php:89
-msgid "Excerpt"
-msgstr ""
-
-#: fpw_widget.class.php:94
-msgid "Edit Page in New Window"
-msgstr ""
-
-#: fpw_widget.class.php:100
+#: fpw_widget.class.php:74
 msgid "Layout Options:"
 msgstr ""
 
-#: fpw_widget.class.php:103
+#: fpw_widget.class.php:77
 msgid "Wrapped Image"
 msgstr ""
 
-#: fpw_widget.class.php:107
+#: fpw_widget.class.php:81
 msgid "Banner Image"
 msgstr ""
 
-#: fpw_widget.class.php:111
+#: fpw_widget.class.php:85
 msgid "Big Image"
 msgstr ""
 
