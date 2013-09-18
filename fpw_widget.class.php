@@ -141,6 +141,10 @@ class FPW_Widget extends WP_Widget {
 
 	// outputs the content of the widget
 	public function widget( $args, $instance ) {
+
+		// enqueue stylesheet for widget
+		// enqueuing here ensure that styles only load when plugin is being displayed
+		wp_enqueue_style( 'fpw_styles_css', plugins_url( 'css/fpw_styles.css', __FILE__), false, FPW_VERSION );
 		
 		/** 
 		 * Extract, sanitize, and compile attributes
@@ -181,6 +185,13 @@ class FPW_Widget extends WP_Widget {
 			$page_title_html = null;
 		}
 
+		// Resolve conflicts with other plugins that filter the_excerpt
+		// podPress: wordpress.org/support/topic/other-plugin-podpress-modifying-fpw-excerpt
+		global $podPress;
+		remove_action( 'the_excerpt', array( $podPress, 'insert_the_excerptplayer' ) );
+		// Digg Digg: wordpress.org/support/topic/on-posts-not-pages-widget-includes-odd-code-at-bottom
+		remove_filter('the_excerpt', 'dd_hook_wp_content');
+
 		// if there's an excerpt, grab it and filter
 		if( $featured_page->post_excerpt ) {
 			$excerpt = $featured_page->post_excerpt;
@@ -189,6 +200,9 @@ class FPW_Widget extends WP_Widget {
 		} else {
 			$excerpt = null;
 		}
+
+		add_filter( 'the_excerpt', array( $podPress, 'insert_the_excerptplayer' ) );
+		add_filter( 'the_excerpt', 'dd_hook_wp_content' );
 
 		// the featured image size is dependant on layout
 		switch ($layout) {
