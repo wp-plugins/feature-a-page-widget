@@ -4,7 +4,7 @@ Donate link: https://www.networkforgood.org/donation/MakeDonation.aspx?ORGID2=52
 Tags: Widget, Widgets, Sidebar, Page, Pages, Featured Page, Thumbnail, Featured Image, Content, Link, Post Thumbnail, Excerpt, Simple
 Requires at least: 3.0.0
 Tested up to: 3.6
-Stable tag: 1.2.4
+Stable tag: 1.2.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -40,6 +40,11 @@ This plugin creates multiple custom image sizes. If you use images that were upl
 = Themes Tested =
 
 Twenty Twelve, Twenty Eleven, Twenty Ten, P2, Kubrick (for old times' sake), Multiple Custom Themes. [Known theme & plugin incompatibilities.](http://wordpress.org/extend/plugins/feature-a-page-widget/other_notes/)
+
+= Other Plugins by MRWweb =
+
+* [Post Status Menu Items](http://wordpress.org/plugins/post-status-menu-items/) - Adds post status links–e.g. "Draft" (7)–to post type admin menus.
+* [Advanced Custom Fields Repeater & Flexible Content Fields Collapser](http://wordpress.org/plugins/advanced-custom-field-repeater-collapser/) - Easier sorting for large repeated fields in the Advanced Custom Fields plugin.
 
 == Installation ==
 
@@ -138,6 +143,10 @@ I'm using the [Chosen](http://harvesthq.github.com/chosen/) jQuery plugin. It's 
 4. Uses standard WordPress fields (Title, Featured Image, and Excerpt) that you already know and love.
 
 == Changelog ==
+= 1.2.5 (September 27, 2013) =
+* [Fix] Removed compatibility "fixes" for Digg Digg and PodPress. See support forum for details and recommended fixes.
+* Thanks to [@phrenq](http://wordpress.org/support/profile/phrenq) for troubleshooting help.
+
 = 1.2.4 (September 18, 2013) =
 * [Fix] Page selection menu no longer disappears after saving widget in WordPress 3.6.
 * [Fix] Remove `the_excerpt` filters for Digg Digg and podPress plugins before outputting widget excerpt.
@@ -204,6 +213,9 @@ I'm using the [Chosen](http://harvesthq.github.com/chosen/) jQuery plugin. It's 
 * Thanks to awesome tester: [Christine Winckler](http://ChristineTheDesigner.com)
 
 == Upgrade Notice ==
+= 1.2.5 =
+Fix for missing excerpts.
+
 = 1.2.4 =
 Fix for disappearing page selector menu after widget save. Minor style improvements.
 
@@ -240,8 +252,8 @@ Cool icons in the "Select page" interface plus fixes for two nasty bugs.
 * "Theme ID". [Support thread with fix.](http://wordpress.org/support/topic/text-not-wrapped-around-image?replies=4)
 
 = Known Plugin Incompatibilities =
-* Digg Digg (resolved in v1.2.4)
-* podPress (resolved v1.2.4)
+* Digg Digg (resolved in v1.2.4, unresolved v1.2.5, see Support Forum)
+* podPress (resolved v1.2.4, unresolved v1.2.5, see Support Forum)
 * qTranslate (resolved v1.2.2)
 
 = Plugin Philosophy =
