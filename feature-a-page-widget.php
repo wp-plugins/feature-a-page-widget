@@ -3,7 +3,7 @@
 * Plugin Name: Feature a Page Widget
 * Description: Feature a single page in any sidebar.
 * Plugin URI: http://mrwweb.com/feature-a-page-widget-plugin-wordpress/
-* Version: 1.2.4
+* Version: 1.2.5
 * Author: Mark Root-Wiley (MRWweb)
 * Author URI: http://mrwweb.com
 * Donate Link: https://www.networkforgood.org/donation/MakeDonation.aspx?ORGID2=522061398
@@ -30,7 +30,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 // because...
 defined('ABSPATH') or die("Cannot access pages directly.");
 
-define('FPW_VERSION', '1.2.4');
+define('FPW_VERSION', '1.2.5');
 
 // Updates plugin version saved as option in database
 function fpw_update_version() {
