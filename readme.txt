@@ -1,8 +1,8 @@
-﻿=== Feature A Page Widget ===
+=== Feature A Page Widget ===
 Contributors: mrwweb
 Donate link: https://www.networkforgood.org/donation/MakeDonation.aspx?ORGID2=522061398
-Tags: Widget, Widgets, Sidebar, Page, Pages, Featured Page, Thumbnail, Featured Image, Content, Link, Post Thumbnail, Excerpt, Simple
-Requires at least: 3.0.0
+Tags: Widget, Widgets, Sidebar, Page, Pages, Post, Posts, Featured Page, Featured Post, Featured Content, Custom Post Types, Thumbnail, Featured Image, Post Thumbnail, Excerpt, Simple
+Requires at least: 3.8
 Tested up to: 4.0
 Stable tag: 1.2.5
 License: GPLv2 or later
@@ -143,6 +143,20 @@ I'm using the [Chosen](http://harvesthq.github.com/chosen/) jQuery plugin. It's 
 4. Uses standard WordPress fields (Title, Featured Image, and Excerpt) that you already know and love.
 
 == Changelog ==
+= 2.0.0 (DATE) =
+* **MAJOR UPDATE** Support only for WordPress 3.8+
+* [New] Updated design matches WordPress 3.8 admin and replaces all but one image with Dashicons.
+* [New] Options for hiding Title, Image, and Excerpt and adding "Read More" link.
+* [New] Features Posts by default! (And new filter for adding other post types!)
+* [New] Changes to templates for great flexibility. (Old templates will partially still work but support may be removed in future versions.)
+* [New] Filters for adding post types, modifying "Read More" link, adding custom layouts, and more!
+* [New] Docblock commenting throughout plugin for better in-code documentation
+* [Fix] Remove `/assets/` folder from plugin package for faster downloads.
+* Various small CSS changes to widget layouts for improved consistency.
+* Reorganized files & cleaner markup in most places
+* Remove use of `extract()` for more readable code.
+* Update Chosen JS library to v1.1.0.
+
 = 1.2.5 (September 27, 2013) =
 * [Fix] Removed compatibility "fixes" for Digg Digg and PodPress. See support forum for details and recommended fixes.
 * Thanks to [@phrenq](http://wordpress.org/support/profile/phrenq) for troubleshooting help.
