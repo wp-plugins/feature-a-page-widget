@@ -31,6 +31,9 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 // Setup & Load Assets
 require_once( 'inc/fpw_init.php' );
 
+// Resolve Conflicts with Popular Plugins & Themes when possible
+require_once( 'inc/fpw_resolve_conflicts.php' );
+
 // Contextual Help
 require_once( 'inc/fpw_help.php' );
 

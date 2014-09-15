@@ -383,6 +383,8 @@ class FPW_Widget extends WP_Widget {
 				echo $args['before_title'] . $instance['title'] . $args['after_title'];
 			}
 
+			do_action( 'fpw_loop_start' );
+
 			while( $widget_loop->have_posts() ) : $widget_loop->the_post();
 			
 			if( $fpw2_template ) {
@@ -392,6 +394,8 @@ class FPW_Widget extends WP_Widget {
 			}
 
 			endwhile;
+
+			do_action( 'fpw_loop_end' );
 
 			wp_reset_postdata();
 

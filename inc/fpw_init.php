@@ -62,10 +62,6 @@ add_action( 'admin_enqueue_scripts', 'fpw_admin_scripts', 100 );
 function fpw_admin_scripts( $hook ) {
 	// Keep the rest of WordPress snappy. Only run on the widgets.php page.
 	if( 'widgets.php' == $hook ) {
-		// dequeue conflicting Chosens
-		wp_dequeue_style( 'tribe-events-chosen-style' );
-		wp_dequeue_script( 'tribe-events-chosen-jquery' );
-
 		// The Chosen jQuery Plugin - http://harvesthq.github.com/chosen/
 		wp_enqueue_script( 'fpw_chosen_js', plugins_url( 'chosen/chosen.jquery.min.js', dirname(__FILE__) ), array( 'jquery' ), '1.1.0' );
 		wp_enqueue_style( 'fpw_chosen_css', plugins_url( 'chosen/chosen.min.css', dirname(__FILE__) ), false, '1.1.0' );
