@@ -1,5 +1,17 @@
 /* This file is an attempt to lighly standardize the layout without beating up the theme */
 
+/* For screen reader-only text */
+.fpw-visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
 /*
  * Our HTML element needs to be blocky
  * See plugin FAQ for IE8 support
@@ -12,30 +24,39 @@ article {
 /* Thanks for catching this, Jeremy Green! */
 .fpw-clearfix:before, .fpw-clearfix:after { content:" "; display:table; }  
 .fpw-clearfix:after { clear:both; }  
-.fpw-clearfix { *zoom:1; }  
+.fpw-clearfix { *zoom:1; }
+
+/* Handle Hidden Fields Better */
+.fpw-page-title:empty,
+.fpw-featured-image:empty,
+.fpw-excerpt:empty {
+	display: none;
+}
 
 /* Nice and tight padding/margin */
-.fpw-widget-page .widget-title,
-.fpw-widget-page .fpw-page-title,
-.fpw-widget-page .fpw-featured-image {
+.widget-title,
+.fpw-page-title,
+.fpw-featured-image {
 	margin: 0 0 10px 0;
 	padding-top: 0;
 }
 
 /* a friendly font size suggestions */
 .fpw-page-title {
+	margin: 10px 0;
+	padding: 0; /* stupid Twenty Eleven */
 	font-size: 18px;
-	margin-bottom: 10px;
+	line-height: 1.5;
 }
 
 /* Responsive images */
 /* Going for the 1.5x retina technique. Feedback is welcome. */
 .fpw-featured-image,
 .fpw-featured-image img {
-	margin: 0;
-	padding: 0;
 	max-width: 100% !important;
 	height: auto !important;
+	margin: 0;
+	padding: 0;
 }
 
 /* Wrapped Layout */
@@ -46,9 +67,9 @@ article {
 	overflow: hidden;
 }
 
-/* Break words for nicer looking text with the floated image */
-.fpw-layout-wrapped .fpw-excerpt {
-	word-wrap: break-word;
+/* Read More Link */
+.fpw-read-more-link {
+	display: inline-block; /* Make sure the link stays together */
 }
 
 /* Fixes an issue in Kubrick and probably other themes */
