@@ -133,7 +133,8 @@ function fpw_page_select_list_options( $selected = null ) {
 }
 
 /**
- * return filter
+ * make a filterable array of the available templates
+ * 
  * @since  2.0.0
  * 
  * @return array registered templates for widget
@@ -156,27 +157,5 @@ function fpw_widget_templates() {
 	$templates = apply_filters( 'fpw_widget_templates', $default_templates );
 
 	return $templates;
-
-}
-
-/**
- * append accesible "Read More" link to a piece of text
- * 
- * intended for use as a filter function
- * 
- * @since 2.0.0
- * 
- * @param  string $excerpt block of text to append link to
- * @return string          block of text with appended link
- */
-function fpw_read_more( $excerpt ) {
-
-	$default_read_more =  __( 'Read More', 'feature-a-page-widget' );
-
-	$read_more_text = apply_filters( 'fpw_read_more_text', $default_read_more );
-
-	$excerpt = $excerpt . ' <a class="fpw-read-more-link" href="' . get_permalink() . '">' .  $read_more_text . '<span class="fpw-visually-hidden"> about "' . get_the_title() . '"</span> &hellip;</a>';
-	
-	return $excerpt;
 
 }

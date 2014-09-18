@@ -26,10 +26,18 @@
 }
 
 .fpw-widget-heading,
-.fpw-advanced legend {
+.fpw-advanced legend,
+.fpw-advanced label  {
 	display: block;
 	margin-bottom: 5px;
 	font-weight: bold;
+}
+
+.fpw-advanced label {
+	font-weight: normal;
+}
+.fpw-advanced label:last-of-type {
+	margin-bottom: 0;
 }
 
 .fpw-layouts label {
@@ -49,24 +57,7 @@
 .fpw-advanced {
 	width: auto;
 	clear: both;
-	margin: 10px 0 15px;
-	padding: 10px;
-	border: 1px solid #e5e5e5;
-}
-
-.fpw-advanced-hide {
-	margin:10px 0 0;
-}
-
-.fpw-advanced-hide input[type=checkbox]:checked:before {
-	content: '\f335';
-}
-
-.fpw-advanced-hide label {
-	margin-right: 5px;
-}
-.fpw-advanced-hide label:last-of-type {
-	margin-right: 0;
+	margin: 5px 0;
 }
 
 /* Fallback for no JS or accessibility mode */

@@ -30,10 +30,10 @@ class FPW_Widget extends WP_Widget {
 			'title' => '',
 			'featured_page_id' => '',
 			'layout' => 'wrapped',
-			'show_read_more' => false,
-			'hide_title' => false,
-			'hide_image' => false,
-			'hide_excerpt' => false,
+			'show_title' => true,
+			'show_image' => true,
+			'show_excerpt' => true,
+			'show_read_more' => false
 		);
 		// any options not set get the default
 		$instance = wp_parse_args( $instance, $defaults );
@@ -110,14 +110,22 @@ class FPW_Widget extends WP_Widget {
 			</span>
 		</p>
 
+
+		<?php
+		$available_layouts = fpw_widget_templates();
+
+		// only display layout settings if there's more than one available layout
+		// allows forcing a single layout with fpw_widget_templates
+		if( count( $available_layouts ) > 1 ) :
+		?>
+
 		<fieldset class="fpw-layouts">
 
 			<legend class="fpw-widget-heading">
 				<?php _e( 'Layout Options', 'feature-a-page-widget' ); ?>
 			</legend>
 
-			<?php
-			$available_layouts = fpw_widget_templates();
+			<?php	
 			foreach( $available_layouts as $slug => $label ) :
 			?>
 
@@ -129,6 +137,7 @@ class FPW_Widget extends WP_Widget {
 			<?php endforeach; ?>
 
 		</fieldset>
+		<?php endif; ?>
 
 		<?php
 		/**
@@ -138,7 +147,7 @@ class FPW_Widget extends WP_Widget {
 		 */
 		$fpw_template = locate_template( 'fpw_views/fpw_default.php', false, true );
 		if( $fpw_template ) {
-			echo '<p class="fpw-error"><span class="dashicons dashicons-info"></span>' . __( 'Your theme is using an outdated custom widget template. It will continue to work, but new widget options added in Version 2.0 will not. Please remove the custom template or update to the newer templates.', 'feature-a-page-widget' ) . '</p>';
+			echo '<p class="fpw-error"><span class="dashicons dashicons-info"></span>' . __( 'Your theme is using an outdated widget template. It will continue to work, but new widget options added in Version 2.0 will not. Please rename or remove the custom template and update to one or more new templates.', 'feature-a-page-widget' ) . '</p>';
 
 		} else {
 
@@ -149,36 +158,24 @@ class FPW_Widget extends WP_Widget {
 
 			<fieldset name="fpw-advanced" class="fpw-advanced">
 
-				<legend class="fpw-widget-heading">Advanced Options</legend>
+				<legend class="fpw-widget-heading">Show Page Elements</legend>					
+				<?php
+				$things_that_can_be_hidden = array(
+					'title' => __( 'Page Title', 'feature-a-page-widget' ),
+					'image' => __( 'Featured Image', 'feature-a-page-widget' ),
+					'excerpt' => __( 'Excerpt', 'feature-a-page-widget' ),
+					'read_more' => __( '"Read More" Link', 'feature-a-page-widget' )
+				);
+				foreach( $things_that_can_be_hidden as $slug => $label ) :
+				?>
 
-				<label for="<?php echo $this->get_field_id( 'show_read_more' ); ?>">
-					<input type="checkbox" id="<?php echo $this->get_field_id( 'show_read_more' ); ?>" name="<?php echo $this->get_field_name('show_read_more'); ?>" class="fpw-show-read-more" value="show_read_more" <?php checked( true, $instance['show_read_more'] ); ?> />
-					<?php _e( 'Show "Read More" link', 'feature-a-page-widget' ); ?>
-				</label>
-				<br />
+					<label for="<?php echo $this->get_field_id( 'show_' . $slug ); ?>" class="fpw-form-field">
+						<input type="checkbox" id="<?php echo $this->get_field_id( 'show_' . $slug ); ?>" name="<?php echo $this->get_field_name('show_' . $slug); ?>" value="show_<?php echo $slug; ?>" <?php checked( true, $instance['show_' . $slug] ); ?> />
+						<span class="fpw-visually-hidden"><?php _e( 'Show ', 'feature-a-page-widget' ); ?></span>
+						<?php echo $label; ?>
+					</label>
 
-				<fieldset name="fpw-advanced-hide" class="fpw-advanced-hide">
-
-					<legend class="fpw-widget-heading"><?php _e( 'Hide:', 'feature-a-page-widget' ); ?></legend>
-					
-					<?php
-					$things_that_can_be_hidden = array(
-						'title' => 'Title',
-						'image' => 'Image',
-						'excerpt' => 'Excerpt'
-					);
-					foreach( $things_that_can_be_hidden as $slug => $label ) :
-					?>
-
-						<label for="<?php echo $this->get_field_id( 'hide_' . $slug ); ?>" class="fpw-form-field">
-							<input type="checkbox" id="<?php echo $this->get_field_id( 'hide_' . $slug ); ?>" name="<?php echo $this->get_field_name('hide_' . $slug); ?>" value="hide_<?php echo $slug; ?>" <?php checked( true, $instance['hide_' . $slug] ); ?> />
-							<span class="fpw-visually-hidden"><?php _e( 'Hide ', 'feature-a-page-widget' ); ?></span>
-							<?php echo $label; ?>
-						</label>
-
-					<?php endforeach; ?>
-
-				</fieldset>
+				<?php endforeach; ?>
 
 			</fieldset>
 
@@ -210,20 +207,21 @@ class FPW_Widget extends WP_Widget {
 			$instance['featured_page_id'] = (int) $new_instance['featured_page_id'];
 		}
 
-		// validate layout for accepted options
-		$accepted_layouts = array_keys( fpw_widget_templates() );
+		// esc layout key
 		$instance['layout'] = esc_attr( $new_instance['layout'] );
-		if ( ! in_array( $instance['layout'], $accepted_layouts ) ) {
-			$instance['layout'] = '';
+		// validate layout for accepted options
+		$accepted_layouts = fpw_widget_templates();
+		if( ! in_array( $instance['layout'], array_keys(  $accepted_layouts ) ) ) {
+			$instance['layout'] = 'wrapped';
 		}
 
 		/**
-		 * booleanu options to sanitize
+		 * boolean options to sanitize
 		 */
+		$instance['show_title'] = (bool) $new_instance['show_title'];
+		$instance['show_image'] = (bool) $new_instance['show_image'];
+		$instance['show_excerpt'] = (bool) $new_instance['show_excerpt'];
 		$instance['show_read_more'] = (bool) $new_instance['show_read_more'];
-		$instance['hide_title'] = (bool) $new_instance['hide_title'];
-		$instance['hide_image'] = (bool) $new_instance['hide_image'];
-		$instance['hide_excerpt'] = (bool) $new_instance['hide_excerpt'];
 		
 		return $instance;
 	}
@@ -236,16 +234,16 @@ class FPW_Widget extends WP_Widget {
 		wp_enqueue_style( 'fpw_styles_css', plugins_url( 'css/fpw_styles.css', dirname(__FILE__)), false, FPW_VERSION );
 		
 		/** 
-		 * Sanitize options
+		 * Validate options
 		 *----------------------------------------------------*/
 		$defaults = array(
 			'title' => '',
 			'featured_page_id' => '',
 			'layout' => 'wrapped',
-			'show_read_more' => false,
-			'hide_title' => false,
-			'hide_image' => false,
-			'hide_excerpt' => false,
+			'show_title' => true,
+			'show_image' => true,
+			'show_excerpt' => true,
+			'show_read_more' => false
 		);
 		// any options not set get the default
 		$instance = wp_parse_args( $instance, $defaults );
@@ -259,6 +257,12 @@ class FPW_Widget extends WP_Widget {
 			$title = apply_filters( 'widget_title', $instance['title'] );
 		}
 
+		// allow for a default layout without forcing a set option
+		$accepted_layouts = fpw_widget_templates();
+		if( 1 === count( $accepted_layouts ) ) {
+			$instance['layout'] = array_keys( $accepted_layouts )[0];
+		}
+
 		/**
 		 * Implement advanced widget options via template function filters
 		 * 
@@ -270,19 +274,19 @@ class FPW_Widget extends WP_Widget {
 			remove_filter( 'fpw_excerpt', 'fpw_read_more', 999 );
 		}
 
-		if( $instance['hide_title'] ) {
+		if( !$instance['show_title'] ) {
 			add_filter( 'fpw_page_title', '__return_empty_string', 999 );
 		} else {
 			remove_filter( 'fpw_page_title', '__return_empty_string', 999 );
 		}
 
-		if( $instance['hide_excerpt'] ) {
+		if( !$instance['show_excerpt'] ) {
 			add_filter( 'fpw_excerpt', '__return_empty_string', 999 );
 		} else {
 			remove_filter( 'fpw_excerpt', '__return_empty_string', 999 );
 		}
 
-		if( $instance['hide_image'] ) {
+		if( !$instance['show_image'] ) {
 			add_filter( 'fpw_featured_image', '__return_empty_string', 999 );
 		} else {
 			remove_filter( 'fpw_featured_image', '__return_empty_string', 999 );
@@ -307,14 +311,17 @@ class FPW_Widget extends WP_Widget {
 				'post_type' => 'any',
 				'post__in' => array( $instance['featured_page_id'] ),
 				'ignore_sticky_posts' => true
-				)
-			);
+			)
+		);
 		
 		// Allow themes to override template
 		if( $fpw_template ) {
 
+			// for the legacy templates :( now I know better
+			extract($args);
+			extract($instance);
+
 			// Stuff only required for legacy templates
-			
 			$featured_page = get_post( $instance['featured_page_id'] );
 			
 			// Let's make a post_class string
@@ -340,7 +347,7 @@ class FPW_Widget extends WP_Widget {
 			if( $featured_page->post_excerpt ) {
 				$excerpt = $featured_page->post_excerpt;
 				$excerpt = apply_filters( 'the_excerpt', $excerpt );
-				$excerpt = apply_filters( 'fpw_excerpt', $excerpt, $featured_page_id );
+				$excerpt = apply_filters( 'fpw_excerpt', $excerpt, $instance['featured_page_id'] );
 			} else {
 				$excerpt = null;
 			}
@@ -383,6 +390,8 @@ class FPW_Widget extends WP_Widget {
 				echo $args['before_title'] . $instance['title'] . $args['after_title'];
 			}
 
+			do_action( 'fpw_loop_start' );
+
 			while( $widget_loop->have_posts() ) : $widget_loop->the_post();
 			
 			if( $fpw2_template ) {
@@ -392,6 +401,8 @@ class FPW_Widget extends WP_Widget {
 			}
 
 			endwhile;
+
+			do_action( 'fpw_loop_end' );
 
 			wp_reset_postdata();
 
