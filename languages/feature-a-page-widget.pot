@@ -1,53 +1,197 @@
-# Copyright (C) 2012 Feature a Page Widget
+# Copyright (C) 2014 Feature a Page Widget
 # This file is distributed under the same license as the Feature a Page Widget package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Feature a Page Widget 1.0.0\n"
+"Project-Id-Version: Feature a Page Widget 2.0.0-beta2\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/feature-a-page-widget\n"
-"POT-Creation-Date: 2012-11-14 14:45:41+00:00\n"
+"POT-Creation-Date: 2014-09-18 19:31:53+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2012-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#. #-#-#-#-#  plugin.pot (Feature a Page Widget 1.0.0)  #-#-#-#-#
+#. #-#-#-#-#  plugin.pot (Feature a Page Widget 2.0.0-beta2)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
-#: fpw_widget.class.php:9
+#: inc/fpw_help.php:28 inc/fpw_widget.class.php:18
 msgid "Feature a Page Widget"
 msgstr ""
 
-#: fpw_widget.class.php:10
-msgid "A widget to feature a single page"
+#: inc/fpw_help.php:29
+msgid "Feature a Page Widget Help"
 msgstr ""
 
-#: fpw_widget.class.php:45
-msgid "Widget Title"
+#: inc/fpw_help.php:29
+msgid ""
+"The Feature a Page Widget uses the \"Featured Image\" and \"Excerpt\" fields "
+"<strong>which are saved and edited on the page you want to feature</strong>. "
+"The widget indicates whether those fields are set in the \"Page to Feature\" "
+"select list (%1$s) and widget form (%2$s / %3$s)."
 msgstr ""
 
-#: fpw_widget.class.php:52
-msgid "Page to feature:"
+#: inc/fpw_help.php:29
+msgid ""
+" If you need to add or modify the Featured Image or Excerpt, click the edit "
+"link (%4$s) in the widget settings form to edit the page in a new tab or "
+"window."
 msgstr ""
 
-#: fpw_widget.class.php:54
-msgid "Select Featured Page&hellip;"
+#: inc/fpw_help.php:29
+msgid "Frequently Asked Questions &amp; Support"
 msgstr ""
 
-#: fpw_widget.class.php:74
-msgid "Layout Options:"
+#: inc/fpw_help.php:29
+msgid ""
+"For information about setting the Excerpt and Featured Image, changing the "
+"widget's look &amp; feel, modifying the widget output, and more, please "
+"visit the plugin's <a target=\"_blank\" href=\"http://wordpress.org/extend/"
+"plugins/feature-a-page-widget/faq/\">FAQ page</a> or <a href=\"%5$s\" target="
+"\"_blank\">readme.txt</a>."
 msgstr ""
 
-#: fpw_widget.class.php:77
+#: inc/fpw_help.php:29
+msgid ""
+"If you are still having problems with the widget after reading the above "
+"help text and plugin FAQ, you can open a thread on <a href=\"http://"
+"wordpress.org/support/plugin/feature-a-page-widget\" target=\"_blank\">the "
+"plugin's support forum</a>."
+msgstr ""
+
+#: inc/fpw_help.php:29
+msgid "Feedback, &amp; Future Versions"
+msgstr ""
+
+#: inc/fpw_help.php:29
+msgid ""
+"Feature additions and improvements to the plugin are primarily made in "
+"response to user feedback. Once you have used the plugin, please consider:"
+msgstr ""
+
+#: inc/fpw_help.php:29
+msgid "Voting for and suggesting new features"
+msgstr ""
+
+#: inc/fpw_help.php:29
+msgid "Submitting feedback to the author"
+msgstr ""
+
+#: inc/fpw_help.php:29
+msgid "Rating and reviewing the plugin on WordPress.org"
+msgstr ""
+
+#: inc/fpw_help.php:30
+msgid "\"Featured Image\" Icon"
+msgstr ""
+
+#: inc/fpw_help.php:30
+msgid "\"Excerpt\" Icon"
+msgstr ""
+
+#: inc/fpw_help.php:31
+msgid "\"Yes\" Icon"
+msgstr ""
+
+#: inc/fpw_help.php:32
+msgid "\"No\" Icon"
+msgstr ""
+
+#: inc/fpw_help.php:33
+msgid "\"Edit\" Icon"
+msgstr ""
+
+#: inc/fpw_helper_functions.php:145
 msgid "Wrapped Image"
 msgstr ""
 
-#: fpw_widget.class.php:81
+#: inc/fpw_helper_functions.php:146
 msgid "Banner Image"
 msgstr ""
 
-#: fpw_widget.class.php:85
+#: inc/fpw_helper_functions.php:147
 msgid "Big Image"
+msgstr ""
+
+#: inc/fpw_widget.class.php:19
+msgid "A widget to feature a single page"
+msgstr ""
+
+#: inc/fpw_widget.class.php:46
+msgid "Widget Title"
+msgstr ""
+
+#: inc/fpw_widget.class.php:53
+msgid "Page to Feature"
+msgstr ""
+
+#: inc/fpw_widget.class.php:54
+msgid "Select Featured Page&hellip;"
+msgstr ""
+
+#: inc/fpw_widget.class.php:62
+msgid ""
+"This widget will display the Title, Featured Image, and Excerpt from the "
+"page you select. Make sure those fields are set for any page you wish to "
+"feature."
+msgstr ""
+
+#: inc/fpw_widget.class.php:69
+msgid "Featured Page Status"
+msgstr ""
+
+#: inc/fpw_widget.class.php:76
+msgid "What is this?"
+msgstr ""
+
+#: inc/fpw_widget.class.php:82
+msgid "Edit Page in New Window"
+msgstr ""
+
+#: inc/fpw_widget.class.php:89
+msgid "Featured Image:"
+msgstr ""
+
+#: inc/fpw_widget.class.php:91 inc/fpw_widget.class.php:103
+msgid "Set"
+msgstr ""
+
+#: inc/fpw_widget.class.php:95 inc/fpw_widget.class.php:107
+msgid "Missing"
+msgstr ""
+
+#: inc/fpw_widget.class.php:101
+msgid "Excerpt:"
+msgstr ""
+
+#: inc/fpw_widget.class.php:125
+msgid "Layout Options"
+msgstr ""
+
+#: inc/fpw_widget.class.php:150
+msgid ""
+"Your theme is using an outdated widget template. It will continue to work, "
+"but new widget options added in Version 2.0 will not. Please rename or "
+"remove the custom template and update to one or more new templates."
+msgstr ""
+
+#: inc/fpw_widget.class.php:164
+msgid "Page Title"
+msgstr ""
+
+#: inc/fpw_widget.class.php:165
+msgid "Featured Image"
+msgstr ""
+
+#: inc/fpw_widget.class.php:166
+msgid "Excerpt"
+msgstr ""
+
+#: inc/fpw_widget.class.php:167
+msgid "\"Read More\" Link"
+msgstr ""
+
+#: inc/fpw_widget.class.php:174
+msgid "Show "
 msgstr ""
 
 #. Plugin URI of the plugin/theme
@@ -55,7 +199,7 @@ msgid "http://mrwweb.com/feature-a-page-widget-plugin-wordpress/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "Feature a single page in any sidebar."
+msgid "Feature a Page, Post, or Custom Post Type in any sidebar."
 msgstr ""
 
 #. Author of the plugin/theme
