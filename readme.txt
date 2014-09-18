@@ -151,11 +151,20 @@ I'm using the [Chosen](http://harvesthq.github.com/chosen/) jQuery plugin. It's 
 * [New] Changes to templates for great flexibility. (Old templates will partially still work but support may be removed in future versions.)
 * [New] Filters for adding post types, modifying "Read More" link, adding custom layouts, and more!
 * [New] Docblock commenting throughout plugin for better in-code documentation
-* [Fix] Remove `/assets/` folder from plugin package for faster downloads.
+* [Fix] Remove `/assets/` folder from plugin package for faster downloads
 * Various small CSS changes to widget layouts for improved consistency.
 * Reorganized files & cleaner markup in most places
 * Remove use of `extract()` for more readable code.
 * Update Chosen JS library to v1.1.0.
+* [New] Introduce plugin compatibility fixes for Jetpack, DiggDigg, and podPress
+
+= 2.0.0-beta2 (September 18, 2014) =
+* Allow "forced" layout via template. If fpw_widget_template filter only returns single layout, it will be used.
+* Switch all templates to use the_title, the_excerpt, and the_post_thumbnail. Use new fpw_loop_start and fpw_loop_end actions to filter those functions.
+* Switch from "Hide" options to "Show" options for Advanced layouts
+
+= 2.0.0-beta (September 15, 2014) =
+- see 2.0.0 above.
 
 = 1.2.5 (September 27, 2013) =
 * [Fix] Removed compatibility "fixes" for Digg Digg and PodPress. See support forum for details and recommended fixes.

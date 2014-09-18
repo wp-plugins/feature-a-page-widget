@@ -1,9 +1,9 @@
 <?php
 /**
 * Plugin Name: Feature a Page Widget
-* Description: Feature a single page in any sidebar.
+* Description: Feature a Page, Post, or Custom Post Type in any sidebar.
 * Plugin URI: http://mrwweb.com/feature-a-page-widget-plugin-wordpress/
-* Version: 2.0.0-beta
+* Version: 2.0.0-beta2
 * Author: Mark Root-Wiley (MRWweb)
 * Author URI: http://mrwweb.com
 * Donate Link: https://www.networkforgood.org/donation/MakeDonation.aspx?ORGID2=522061398
@@ -31,6 +31,9 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 // Setup & Load Assets
 require_once( 'inc/fpw_init.php' );
 
+// Resolve Conflicts with Popular Plugins & Themes when possible
+require_once( 'inc/fpw_resolve_conflicts.php' );
+
 // Contextual Help
 require_once( 'inc/fpw_help.php' );
 
@@ -38,7 +41,7 @@ require_once( 'inc/fpw_help.php' );
 require_once( 'inc/fpw_helper_functions.php' );
 
 // Template Tags
-require_once( 'inc/fpw_template_tags.php' );
+require_once( 'inc/fpw_template_filters.php' );
 
 // Widget Class
 require_once( 'inc/fpw_widget.class.php' );
