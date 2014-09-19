@@ -162,6 +162,7 @@ I'm using the [Chosen](http://harvesthq.github.com/chosen/) jQuery plugin. It's 
 * Allow "forced" layout via template. If fpw_widget_template filter only returns single layout, it will be used.
 * Switch all templates to use the_title, the_excerpt, and the_post_thumbnail. Use new fpw_loop_start and fpw_loop_end actions to filter those functions.
 * Switch from "Hide" options to "Show" options for Advanced layouts
+* ~18hours after release, fixed error on sites running <PHP5.4
 
 = 2.0.0-beta (September 15, 2014) =
 - see 2.0.0 above.
