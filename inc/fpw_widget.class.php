@@ -260,7 +260,8 @@ class FPW_Widget extends WP_Widget {
 		// allow for a default layout without forcing a set option
 		$accepted_layouts = fpw_widget_templates();
 		if( 1 === count( $accepted_layouts ) ) {
-			$instance['layout'] = array_keys( $accepted_layouts )[0];
+			$accepted_layouts_keys = array_keys( $accepted_layouts );
+			$instance['layout'] = $accepted_layouts_keys[0];
 		}
 
 		/**
