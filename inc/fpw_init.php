@@ -46,14 +46,6 @@ function fpw_uninstall() {
 }
 
 /**
- * load text domain
- */
-add_action( 'plugins_loaded', 'fpw_textdomain' );
-function fpw_textdomain() {
-	load_plugin_textdomain( 'feature-a-page-widget', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
-}
-
-/**
  * load scripts & styles required for widget admin
  * 
  * also removes known conflicting scripts

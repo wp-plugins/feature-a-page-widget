@@ -28,6 +28,14 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
+/**
+ * load text domain
+ */
+add_action( 'plugins_loaded', 'fpw_textdomain' );
+function fpw_textdomain() {
+	load_plugin_textdomain( 'feature-a-page-widget', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+}
+
 // Setup & Load Assets
 require_once( 'inc/fpw_init.php' );
 
@@ -40,7 +48,7 @@ require_once( 'inc/fpw_help.php' );
 // Helper Functions
 require_once( 'inc/fpw_helper_functions.php' );
 
-// Template Tags
+// Widget Template Filters
 require_once( 'inc/fpw_template_filters.php' );
 
 // Widget Class
