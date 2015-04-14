@@ -51,6 +51,7 @@ See the [FAQ page](https://wordpress.org/plugins/feature-a-page-widget/faq/) for
 
 * English (default)
 * German (de_DE). Thanks to [Christoph Joschko](https://profiles.wordpress.org/jomit/) for the translation.
+* Serbian (sr_RS). Thanks to Ogi Djuraskovic of [FirstSiteGuide.com](http://firstsiteguide.com/).
 
 = Other Plugins by MRWweb =
 
