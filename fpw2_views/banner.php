@@ -12,16 +12,16 @@
  */
 ?>
 
-<article class="hentry fpw-clearfix fpw-layout-banner">
+<article class="fpw-clearfix fpw-layout-banner">
 
-	<a href="<?php the_permalink(); ?>" class="fpw-featured-link" rel="bookmark">
+	<a href="<?php the_permalink(); ?>" class="fpw-featured-link">
 		<div class="fpw-featured-image">
 			<?php the_post_thumbnail( 'fpw_banner' ); ?>
 		</div>
-		<h3 class="fpw-page-title entry-title"><?php the_title(); ?></h3>
+		<h3 class="fpw-page-title"><?php the_title(); ?></h3>
 	</a>	
 
-	<div class="fpw-excerpt entry-summary">
+	<div class="fpw-excerpt">
 		<?php the_excerpt(); ?>
 	</div>
 

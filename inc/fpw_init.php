@@ -8,10 +8,19 @@
  * @since	2.0.0
  * @license	http://www.gnu.org/licenses/gpl-2.0.html	GPLv2 or later
  */
+
+/**
+ * 1. Set & Update Version
+ * 2. Load translation files
+ * 3. Enqueue JS and CSS
+ * 4. Setup Theme Supports and Image Sizes
+ * 5. Init Widget
+ */
+
 /**
  * define and update the plugin option in the database
  */
-define('FPW_VERSION', '2.0.0-beta2');
+define( 'FPW_VERSION', '2.0.0' );
 function fpw_update_version() {
 	// Update the Plugin Version if it doesn't exist or is out of sync
 	$fpw_options = get_option( 'fpw_options' );
@@ -46,17 +55,23 @@ function fpw_uninstall() {
 }
 
 /**
+ * load text domain
+ */
+add_action( 'plugins_loaded', 'fpw_textdomain' );
+function fpw_textdomain() {
+	load_plugin_textdomain( 'feature-a-page-widget', false, dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/' );
+}
+
+/**
  * load scripts & styles required for widget admin
- * 
- * also removes known conflicting scripts
  */
 add_action( 'admin_enqueue_scripts', 'fpw_admin_scripts', 100 );
 function fpw_admin_scripts( $hook ) {
 	// Keep the rest of WordPress snappy. Only run on the widgets.php page.
 	if( 'widgets.php' == $hook ) {
 		// The Chosen jQuery Plugin - http://harvesthq.github.com/chosen/
-		wp_enqueue_script( 'fpw_chosen_js', plugins_url( 'chosen/chosen.jquery.min.js', dirname(__FILE__) ), array( 'jquery' ), '1.1.0' );
-		wp_enqueue_style( 'fpw_chosen_css', plugins_url( 'chosen/chosen.min.css', dirname(__FILE__) ), false, '1.1.0' );
+		wp_enqueue_script( 'fpw_chosen_js', plugins_url( 'chosen/chosen.jquery.js', dirname(__FILE__) ), array( 'jquery' ), '1.4.2' );
+		wp_enqueue_style( 'fpw_chosen_css', plugins_url( 'chosen/chosen.css', dirname(__FILE__) ), false, '1.4.2' );
 
 		// Plugin JS
 		wp_enqueue_script( 'fpw_admin_js', plugins_url( 'js/fpw_admin.js', dirname(__FILE__) ), array( 'jquery', 'fpw_chosen_js' ), FPW_VERSION );
@@ -64,6 +79,18 @@ function fpw_admin_scripts( $hook ) {
 		wp_enqueue_style( 'fpw_admin_css', plugins_url( 'css/fpw_admin.css', dirname(__FILE__) ), array(), FPW_VERSION );
 	}
 }
+
+
+/**
+ * load scripts & styles required for front end
+ */
+add_action( 'wp_enqueue_scripts', 'fpw_enqueue_scripts', 5 );
+function fpw_enqueue_scripts() {
+	// only load styles if there is at least one active widget on the site
+	if ( is_active_widget( false, false, 'fpw_widget' ) ) {
+		wp_enqueue_style( 'fpw_styles_css', plugins_url( 'css/fpw_styles.css', dirname(__FILE__) ), false, FPW_VERSION );
+	}
+};
 
 /**
  * Set up theme support functions and image sizes for widget
@@ -84,12 +111,13 @@ function fpw_page_supports() {
 		}
 	}
 
+	// Register image sizes
 	// For the "Wrapped" layout
 	add_image_size( 'fpw_square', 200, 200, true );
 	// For the "Banner" layout
 	add_image_size( 'fpw_banner', 400, 150, true );
 	// For the "Big" layout
-	add_image_size( 'fpw_big', 400, 600, true );
+	add_image_size( 'fpw_big', 400, 600 );
 }
 
 /**

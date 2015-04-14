@@ -15,7 +15,7 @@ class FPW_Widget extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 	 		'fpw_widget', // Base ID
-			__( 'Feature a Page Widget', 'feature-a-page-widget' ), // Name
+			__( 'Feature a Page', 'feature-a-page-widget' ), // Name
 			array( 'description' => __( 'A widget to feature a single page', 'feature-a-page-widget' ) )
 		);
 	}
@@ -72,7 +72,7 @@ class FPW_Widget extends WP_Widget {
 				global $wp_customize;
 				if( ! isset( $wp_customize ) ) :
 				?> 
-					<a href="#" class="fpw-help-button">
+					<a href="#0" class="fpw-help-button">
 						<span class="fpw-visually-hidden"><?php _e( 'What is this?', 'feature-a-page-widget' ); ?></span>
 						<span class="fpw-help-icon dashicons dashicons-editor-help"></span>
 					</a>
@@ -147,7 +147,7 @@ class FPW_Widget extends WP_Widget {
 		 */
 		$fpw_template = locate_template( 'fpw_views/fpw_default.php', false, true );
 		if( $fpw_template ) {
-			echo '<p class="fpw-error"><span class="dashicons dashicons-info"></span>' . __( 'Your theme is using an outdated widget template. It will continue to work, but new widget options added in Version 2.0 will not. Please rename or remove the custom template and update to one or more new templates.', 'feature-a-page-widget' ) . '</p>';
+			echo '<p class="fpw-error"><span class="dashicons dashicons-info"></span>' . __( 'Your theme is using an outdated widget template. It will continue to work, but new widget options added in Version 2.0 will not. Please rename or remove the custom template and update to one or more new templates.', 'feature-a-page-widget' ) . ' ' . __( '<a href="http://mrwweb.com/wordpress-plugins/feature-a-page-widget/version-2-documentation/" target="_blank">Full Version 2.0 Documentation</a>', 'feature-a-page-widget' ) . '</p>';
 
 		} else {
 
@@ -212,7 +212,8 @@ class FPW_Widget extends WP_Widget {
 		// validate layout for accepted options
 		$accepted_layouts = fpw_widget_templates();
 		if( ! in_array( $instance['layout'], array_keys(  $accepted_layouts ) ) ) {
-			$instance['layout'] = 'wrapped';
+			$accepted_layouts_keys = array_keys( $accepted_layouts );
+			$instance['layout'] = $accepted_layouts_keys[0];
 		}
 
 		/**
@@ -227,12 +228,7 @@ class FPW_Widget extends WP_Widget {
 	}
 
 	// outputs the content of the widget
-	public function widget( $args, $instance ) {
-
-		// enqueue stylesheet for widget
-		// enqueuing here ensure that styles only load when plugin is being displayed
-		wp_enqueue_style( 'fpw_styles_css', plugins_url( 'css/fpw_styles.css', dirname(__FILE__)), false, FPW_VERSION );
-		
+	public function widget( $args, $instance ) {		
 		/** 
 		 * Validate options
 		 *----------------------------------------------------*/
@@ -269,25 +265,25 @@ class FPW_Widget extends WP_Widget {
 		 * 
 		 * removing filters ensures that later instances don't accidentally inherit settings
 		 */
-		if( $instance['show_read_more'] ) {
+		if( (bool) $instance['show_read_more'] ) {
 			add_filter( 'fpw_excerpt', 'fpw_read_more', 999 );
 		} else {
 			remove_filter( 'fpw_excerpt', 'fpw_read_more', 999 );
 		}
 
-		if( !$instance['show_title'] ) {
+		if( ! (bool) $instance['show_title'] ) {
 			add_filter( 'fpw_page_title', '__return_empty_string', 999 );
 		} else {
 			remove_filter( 'fpw_page_title', '__return_empty_string', 999 );
 		}
 
-		if( !$instance['show_excerpt'] ) {
+		if( ! (bool) $instance['show_excerpt'] ) {
 			add_filter( 'fpw_excerpt', '__return_empty_string', 999 );
 		} else {
 			remove_filter( 'fpw_excerpt', '__return_empty_string', 999 );
 		}
 
-		if( !$instance['show_image'] ) {
+		if( ! (bool) $instance['show_image'] ) {
 			add_filter( 'fpw_featured_image', '__return_empty_string', 999 );
 		} else {
 			remove_filter( 'fpw_featured_image', '__return_empty_string', 999 );
@@ -304,13 +300,13 @@ class FPW_Widget extends WP_Widget {
 		$fpw_template = locate_template( 'fpw_views/fpw_default.php', false, true );
 		
 		// v 2.X templates
-		$fpw2_template = locate_template( 'fpw2_views/' . $instance['layout'] . '.php', false, true );
+		$fpw2_template = locate_template( 'fpw2_views/' . esc_attr( $instance['layout'] ) . '.php', false, true );
 
 		// Make our new WP_Query instance for the widget. We use it either way
 		$widget_loop = new WP_Query(
 			array(
 				'post_type' => 'any',
-				'post__in' => array( $instance['featured_page_id'] ),
+				'post__in' => array( (int) $instance['featured_page_id'] ),
 				'ignore_sticky_posts' => true
 			)
 		);
@@ -388,7 +384,7 @@ class FPW_Widget extends WP_Widget {
 			echo $args['before_widget'];
 
 			if( $instance['title'] ) {
-				echo $args['before_title'] . $instance['title'] . $args['after_title'];
+				echo $args['before_title'] . esc_attr( $instance['title'] ) . $args['after_title'];
 			}
 
 			do_action( 'fpw_loop_start' );
@@ -398,7 +394,7 @@ class FPW_Widget extends WP_Widget {
 			if( $fpw2_template ) {
 				require( $fpw2_template );
 			} else {
-				require( plugin_dir_path( dirname(__FILE__) ) . 'fpw2_views/' . $instance['layout'] . '.php' );
+				require( plugin_dir_path( dirname(__FILE__) ) . 'fpw2_views/' . esc_attr( $instance['layout'] ) . '.php' );
 			}
 
 			endwhile;

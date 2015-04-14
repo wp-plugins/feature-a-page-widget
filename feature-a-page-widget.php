@@ -2,7 +2,7 @@
 /**
 * Plugin Name: Feature a Page Widget
 * Description: Feature a Page, Post, or Custom Post Type in any sidebar.
-* Plugin URI: http://mrwweb.com/feature-a-page-widget-plugin-wordpress/
+* Plugin URI: http://mrwweb.com/wordpress-plugins/feature-a-page-widget/version-2-documentation/
 * Version: 2.0.0-beta2
 * Author: Mark Root-Wiley (MRWweb)
 * Author URI: http://mrwweb.com
@@ -27,14 +27,6 @@ You should have received a copy of the GNU General Public Licchosense
 along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
-
-/**
- * load text domain
- */
-add_action( 'plugins_loaded', 'fpw_textdomain' );
-function fpw_textdomain() {
-	load_plugin_textdomain( 'feature-a-page-widget', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
-}
 
 // Setup & Load Assets
 require_once( 'inc/fpw_init.php' );

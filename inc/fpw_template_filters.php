@@ -137,7 +137,7 @@ function fpw_read_more( $excerpt ) {
 
 	$read_more_text = apply_filters( 'fpw_read_more_text', $default_read_more );
 
-	$excerpt = $excerpt . ' <a class="fpw-read-more-link" href="' . get_permalink() . '">' .  $read_more_text . '<span class="fpw-visually-hidden">' . _x( 'about', 'Joining word in accessible read more link. Form: __"Read More"__ about {Page Title}','feature-a-page-widget' ) . '"' . get_the_title() . '"</span> &hellip;</a>';
+	$excerpt = $excerpt . ' <a class="fpw-read-more-link" href="' . get_permalink() . '">' .  $read_more_text . '<span class="screen-reader-text">' . _x( 'about', 'Joining word in accessible read more link. Form: __"Read More"__ about {Page Title}','feature-a-page-widget' ) . ' "' . get_the_title() . '"</span> &hellip;</a>';
 	
 	return $excerpt;
 

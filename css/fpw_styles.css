@@ -1,17 +1,5 @@
 /* This file is an attempt to lighly standardize the layout without beating up the theme */
 
-/* For screen reader-only text */
-.fpw-visually-hidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
-
 /*
  * Our HTML element needs to be blocky
  * See plugin FAQ for IE8 support
@@ -22,9 +10,17 @@ article {
 
 /* A clearfix solution just for this plugin */
 /* Thanks for catching this, Jeremy Green! */
-.fpw-clearfix:before, .fpw-clearfix:after { content:" "; display:table; }  
-.fpw-clearfix:after { clear:both; }  
-.fpw-clearfix { *zoom:1; }
+.fpw-clearfix:before,
+.fpw-clearfix:after {
+	content: " ";
+	display: table;
+}
+.fpw-clearfix:after {
+	clear: both;
+}
+.fpw-clearfix {
+	*zoom: 1;
+}
 
 /* Handle Hidden Fields Better */
 .fpw-page-title:empty,
@@ -33,8 +29,7 @@ article {
 	display: none;
 }
 
-/* Nice and tight padding/margin */
-.widget-title,
+/* Nice padding/margin */
 .fpw-page-title,
 .fpw-featured-image {
 	margin: 0 0 10px 0;

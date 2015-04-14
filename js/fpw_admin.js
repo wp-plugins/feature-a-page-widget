@@ -62,8 +62,6 @@ jQuery(document).ready(function($) {
 	// Thanks http://www.johngadbois.com/adding-your-own-callbacks-to-wordpress-ajax-requests/
 	$(document).ajaxSuccess(function(e, xhr, settings) {
 
-		console.log(e, xhr, settings);
-
 		if(settings.data.search('action=save-widget') != -1 && settings.data.search('id_base=fpw_widget') != -1) {
 			// as of WP 3.6, the activeElement isn't within the widget anymore :( so this doesn't work.
 			// $widget = $(e.currentTarget.activeElement).parents('.widget');
