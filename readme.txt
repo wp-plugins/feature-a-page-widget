@@ -1,10 +1,10 @@
-﻿=== Feature A Page Widget ===
+=== Feature A Page Widget ===
 Contributors: mrwweb
 Donate link: https://www.networkforgood.org/donation/MakeDonation.aspx?ORGID2=522061398
 Tags: Widget, Widgets, Sidebar, Page, Pages, Post, Posts, Featured Page, Featured Post, Featured Content, Custom Post Types, Thumbnail, Featured Image, Post Thumbnail, Excerpt, Simple
 Requires at least: 3.8
 Tested up to: 4.2
-Stable tag: 2.0.0
+Stable tag: 2.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -50,7 +50,7 @@ See the [FAQ page](https://wordpress.org/plugins/feature-a-page-widget/faq/) for
 = Available Languages =
 
 * English (default)
-* German (de_DE). Thanks to [Christoph Joschko](https://profiles.wordpress.org/jomit/) for the translation.
+* German (de_DE). Thanks to [Christoph Joschko](https://profiles.wordpress.org/jomit/).
 * Serbian (sr_RS). Thanks to Ogi Djuraskovic of [FirstSiteGuide.com](http://firstsiteguide.com/).
 
 = Other Plugins by MRWweb =
@@ -152,7 +152,13 @@ I'm using the [Chosen](http://harvesthq.github.com/chosen/) jQuery plugin. It's 
 4. Uses standard WordPress fields (Title, Featured Image, and Excerpt) that you already know and love.
 
 == Changelog ==
-= 2.0.0 (DATE) =
+= 2.0.1 (DATE) =
+* [Fix] Give `fieldset` a full `name` attribute to avoid SiteOrigin Page Builder error.
+* [New] Explicitly support SiteOrigin Page Builder via new script/style enqueues and JS event bindings.
+* [Change] Rename "Chosen" library slug CSS/JS to hopefully avoid conflicts with other bundled versions.
+* [Change] Remove priority of enqueues in admin. Not really sure why it was there in the first place...
+
+= 2.0.0 (April 14, 2015) =
 * **MAJOR UPDATE** Requires WordPress 3.8+. New template override system. Please update templates ASAP.
 * [New] Updated widget form design matches WordPress 3.8 admin and replaces all but one image with Dashicons.
 * [New] Options for hiding Title, Image, and Excerpt and adding "Read More" link.
@@ -241,6 +247,9 @@ I'm using the [Chosen](http://harvesthq.github.com/chosen/) jQuery plugin. It's 
 * Thanks to awesome tester: [Christine Winckler](http://ChristineTheDesigner.com)
 
 == Upgrade Notice ==
+= 2.0.1 =
+v2.0 IS A MAJOR UPDATE. Visit plugin home for detailed information about updates. / 2.0.0: Improved interface, ability to feature any post type, new template system, more filters, and more! / 2.0.1: Support for SiteOrigin Page Builder Widget Editing
+
 = 2.0.0 =
 **MAJOR UPDATE.** Improved interface, ability to feature any post type, new template system, more filters, and more! Visit plugin home for detailed information about updates.
 

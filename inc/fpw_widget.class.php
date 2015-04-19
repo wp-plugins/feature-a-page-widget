@@ -156,7 +156,7 @@ class FPW_Widget extends WP_Widget {
 			 */
 			?>
 
-			<fieldset name="fpw-advanced" class="fpw-advanced">
+			<fieldset name="<?php echo $this->get_field_name('fpw_advanced'); ?>" class="fpw-advanced">
 
 				<legend class="fpw-widget-heading">Show Page Elements</legend>					
 				<?php
@@ -169,7 +169,7 @@ class FPW_Widget extends WP_Widget {
 				foreach( $things_that_can_be_hidden as $slug => $label ) :
 				?>
 
-					<label for="<?php echo $this->get_field_id( 'show_' . $slug ); ?>" class="fpw-form-field">
+					<label for="<?php echo $this->get_field_id( 'show_' . $slug ); ?>" class="fpw-form-filed">
 						<input type="checkbox" id="<?php echo $this->get_field_id( 'show_' . $slug ); ?>" name="<?php echo $this->get_field_name('show_' . $slug); ?>" value="show_<?php echo $slug; ?>" <?php checked( true, $instance['show_' . $slug] ); ?> />
 						<span class="fpw-visually-hidden"><?php _e( 'Show ', 'feature-a-page-widget' ); ?></span>
 						<?php echo $label; ?>

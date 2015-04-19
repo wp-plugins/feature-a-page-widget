@@ -20,7 +20,7 @@
 /**
  * define and update the plugin option in the database
  */
-define( 'FPW_VERSION', '2.0.0' );
+define( 'FPW_VERSION', '2.0.1' );
 function fpw_update_version() {
 	// Update the Plugin Version if it doesn't exist or is out of sync
 	$fpw_options = get_option( 'fpw_options' );
@@ -65,18 +65,18 @@ function fpw_textdomain() {
 /**
  * load scripts & styles required for widget admin
  */
-add_action( 'admin_enqueue_scripts', 'fpw_admin_scripts', 100 );
+add_action( 'admin_enqueue_scripts', 'fpw_admin_scripts' );
 function fpw_admin_scripts( $hook ) {
 	// Keep the rest of WordPress snappy. Only run on the widgets.php page.
 	if( 'widgets.php' == $hook ) {
 		// The Chosen jQuery Plugin - http://harvesthq.github.com/chosen/
-		wp_enqueue_script( 'fpw_chosen_js', plugins_url( 'chosen/chosen.jquery.js', dirname(__FILE__) ), array( 'jquery' ), '1.4.2' );
-		wp_enqueue_style( 'fpw_chosen_css', plugins_url( 'chosen/chosen.css', dirname(__FILE__) ), false, '1.4.2' );
+		wp_register_script( 'chosen', plugins_url( 'chosen/chosen.jquery.js', dirname(__FILE__) ), array( 'jquery' ), '1.4.2' );
+		wp_register_style( 'chosen_css', plugins_url( 'chosen/chosen.css', dirname(__FILE__) ), false, '1.4.2' );
 
 		// Plugin JS
-		wp_enqueue_script( 'fpw_admin_js', plugins_url( 'js/fpw_admin.js', dirname(__FILE__) ), array( 'jquery', 'fpw_chosen_js' ), FPW_VERSION );
+		wp_enqueue_script( 'fpw_admin_js', plugins_url( 'js/fpw_admin.js', dirname(__FILE__) ), array( 'chosen' ), FPW_VERSION );
 		// Plugin CSS
-		wp_enqueue_style( 'fpw_admin_css', plugins_url( 'css/fpw_admin.css', dirname(__FILE__) ), array(), FPW_VERSION );
+		wp_enqueue_style( 'fpw_admin_css', plugins_url( 'css/fpw_admin.css', dirname(__FILE__) ), array( 'chosen_css' ), FPW_VERSION );
 	}
 }
 
