@@ -134,10 +134,21 @@ function fpw_excerpt( $excerpt ) {
 function fpw_read_more( $excerpt ) {
 
 	$default_read_more =  __( 'Read More', 'feature-a-page-widget' );
-
+	/**
+	 * change "Read More" text in "Read More about __{TITLE}__..." link
+	 * @var string
+	 * @since 2.0.0
+	 */
 	$read_more_text = apply_filters( 'fpw_read_more_text', $default_read_more );
 
-	$excerpt = $excerpt . ' <a class="fpw-read-more-link" href="' . get_permalink() . '">' .  $read_more_text . '<span class="screen-reader-text">' . _x( 'about', 'Joining word in accessible read more link. Form: __"Read More"__ about {Page Title}','feature-a-page-widget' ) . ' "' . get_the_title() . '"</span> &hellip;</a>';
+	/**
+	 * change or hide the "..." in the read more link
+	 * @var string
+	 * @since 2.0.2
+	 */
+	$read_more_ellipsis = apply_filters( 'fpw_read_more_ellipsis', '&hellip;' );
+
+	$excerpt = $excerpt . ' <a class="fpw-read-more-link" href="' . get_permalink() . '">' .  esc_html( $read_more_text ) . '<span class="screen-reader-text"> ' . _x( 'about', 'Joining word in accessible read more link. Form: __"Read More"__ about {Page Title}','feature-a-page-widget' ) . ' "' . get_the_title() . '"</span>' . esc_html( $read_more_ellipsis ) . '</a>';
 	
 	return $excerpt;
 

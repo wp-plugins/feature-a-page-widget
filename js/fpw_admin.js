@@ -77,7 +77,18 @@ jQuery(document).ready(function($) {
 
 	// 3.9+
 	$( document ).on( 'widget-updated', fpwActivateChosen );
-    $( document ).on( 'widget-added', fpwActivateChosen );
+	$( document ).on( 'widget-added', fpwActivateChosen );
+
+	// PageOrigins Site Builder Support
+	// https://siteorigin.com/docs/page-builder/widget-compatibility/
+	$(document).on('panelsopen', function(e) {
+		var dialog = $(e.target);
+		
+		// Check that this is for our widget class
+		if( !dialog.has('.fpw-featured-page-id') ) return;
+
+		fpwSetChosen( this );
+	});
 
 	/* Thanks to Codestyling Localization for this snippet to trigger contextual help */
 	$('.fpw-help-button').live('click', function(event) {
