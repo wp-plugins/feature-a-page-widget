@@ -158,7 +158,7 @@ class FPW_Widget extends WP_Widget {
 
 			<fieldset name="<?php echo $this->get_field_name('fpw_advanced'); ?>" class="fpw-advanced">
 
-				<legend class="fpw-widget-heading">Show Page Elements</legend>					
+				<legend class="fpw-widget-heading"><?php _e( 'Show Page Elements', 'feature-a-page-widget' ); ?></legend>					
 				<?php
 				$things_that_can_be_hidden = array(
 					'title' => __( 'Page Title', 'feature-a-page-widget' ),

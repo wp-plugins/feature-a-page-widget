@@ -43,9 +43,7 @@
 .fpw-layouts label {
 	display: block;
 	margin-bottom: 7px;
-	/* don't overlap floated element */
-	width: auto;
-	overflow: hidden;
+	line-height: 1.5;
 }
 
 /* "Hide" the select list */

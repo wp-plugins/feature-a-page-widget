@@ -4,7 +4,7 @@ Donate link: https://www.networkforgood.org/donation/MakeDonation.aspx?ORGID2=52
 Tags: Widget, Widgets, Sidebar, Page, Pages, Post, Posts, Featured Page, Featured Post, Featured Content, Custom Post Types, Thumbnail, Featured Image, Post Thumbnail, Excerpt, Simple
 Requires at least: 3.8
 Tested up to: 4.2
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -52,6 +52,7 @@ See the [FAQ page](https://wordpress.org/plugins/feature-a-page-widget/faq/) for
 * English (default)
 * German (de_DE). Thanks to [Christoph Joschko](https://profiles.wordpress.org/jomit/).
 * Serbian (sr_RS). Thanks to Ogi Djuraskovic of [FirstSiteGuide.com](http://firstsiteguide.com/).
+* Polish (pl_PL). Thanks to [Maciej Gryniuk](http://maciej-gryniuk.tk/).
 
 = Other Plugins by MRWweb =
 
@@ -152,7 +153,15 @@ I'm using the [Chosen](http://harvesthq.github.com/chosen/) jQuery plugin. It's 
 4. Uses standard WordPress fields (Title, Featured Image, and Excerpt) that you already know and love.
 
 == Changelog ==
-= 2.0.1 (DATE) =
+= 2.0.2 (May 1, 2015) =
+* [Fix] One string missing i18n. (Thanks, Maciej Gryniuk!)
+* [Fix] Prevent clipped radio buttons with browser zoom.
+* [New] `fpw_read_more_ellipsis` to filter punctuation in read more link. [Forum request.](https://wordpress.org/support/topic/excerpt-ellipses?replies=2#post-6861677)
+* [New] Polish Translation from Maciej Gryniuk! (Update .pot file too.)
+* [New] Added  missing space in "Read More" link noted in ["WordPress Plugin Review: Feature a Page Widget."](http://beyond-paper.com/wordpress-plugin-review-feature-a-page-widget/)
+* [Documentation] New sticky [Support Forum post about accessible read more link](https://wordpress.org/support/topic/does-your-read-more-link-say-read-more-about-title).
+
+= 2.0.1 (April 19, 2015) =
 * [Fix] Give `fieldset` a full `name` attribute to avoid SiteOrigin Page Builder error.
 * [New] Explicitly support SiteOrigin Page Builder via new script/style enqueues and JS event bindings.
 * [Change] Rename "Chosen" library slug CSS/JS to hopefully avoid conflicts with other bundled versions.
@@ -247,6 +256,9 @@ I'm using the [Chosen](http://harvesthq.github.com/chosen/) jQuery plugin. It's 
 * Thanks to awesome tester: [Christine Winckler](http://ChristineTheDesigner.com)
 
 == Upgrade Notice ==
+== 2.0.2 =
+v2.0 IS A MAJOR UPDATE. Visit plugin home for detailed information about updates. / 2.0.0: Improved interface, ability to feature any post type, new template system, more filters, and more! / 2.0.2: New Polish translation, multiple small bug fixes, new `fpw_read_more_ellipsis` filter.
+
 = 2.0.1 =
 v2.0 IS A MAJOR UPDATE. Visit plugin home for detailed information about updates. / 2.0.0: Improved interface, ability to feature any post type, new template system, more filters, and more! / 2.0.1: Support for SiteOrigin Page Builder Widget Editing
 
