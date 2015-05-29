@@ -263,7 +263,7 @@ I'm using the [Chosen](http://harvesthq.github.com/chosen/) jQuery plugin. It's 
 = 2.0.3 =
 v2.0 IS A MAJOR UPDATE. Visit plugin home for detailed information about updates. / 2.0.0: Improved interface, ability to feature any post type, new template system, more filters, and more! / 2.0.3: Add Spanish translation.
 
-== 2.0.2 =
+= 2.0.2 =
 v2.0 IS A MAJOR UPDATE. Visit plugin home for detailed information about updates. / 2.0.0: Improved interface, ability to feature any post type, new template system, more filters, and more! / 2.0.2: New Polish translation, multiple small bug fixes, new `fpw_read_more_ellipsis` filter.
 
 = 2.0.1 =
