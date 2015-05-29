@@ -4,11 +4,11 @@ Donate link: https://www.networkforgood.org/donation/MakeDonation.aspx?ORGID2=52
 Tags: Widget, Widgets, Sidebar, Page, Pages, Post, Posts, Featured Page, Featured Post, Featured Content, Custom Post Types, Thumbnail, Featured Image, Post Thumbnail, Excerpt, Simple
 Requires at least: 3.8
 Tested up to: 4.2
-Stable tag: 2.0.2
+Stable tag: 2.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Shows a summary of any Page in any sidebar.
+Shows an attractive summary of any page in any sidebar.
 
 == Description ==
 
@@ -53,6 +53,7 @@ See the [FAQ page](https://wordpress.org/plugins/feature-a-page-widget/faq/) for
 * German (de_DE). Thanks to [Christoph Joschko](https://profiles.wordpress.org/jomit/).
 * Serbian (sr_RS). Thanks to Ogi Djuraskovic of [FirstSiteGuide.com](http://firstsiteguide.com/).
 * Polish (pl_PL). Thanks to [Maciej Gryniuk](http://maciej-gryniuk.tk/).
+* Spanish (es_ES). Thanks to [Luuuciano](https://wordpress.org/support/profile/luuuciano).
 
 = Other Plugins by MRWweb =
 
@@ -153,6 +154,9 @@ I'm using the [Chosen](http://harvesthq.github.com/chosen/) jQuery plugin. It's 
 4. Uses standard WordPress fields (Title, Featured Image, and Excerpt) that you already know and love.
 
 == Changelog ==
+= 2.0.3 (May 29, 2015) = 
+* [New] Spanish Translations. Thanks to [Luuuciano](https://wordpress.org/support/profile/luuuciano)!
+
 = 2.0.2 (May 1, 2015) =
 * [Fix] One string missing i18n. (Thanks, Maciej Gryniuk!)
 * [Fix] Prevent clipped radio buttons with browser zoom.
@@ -256,6 +260,9 @@ I'm using the [Chosen](http://harvesthq.github.com/chosen/) jQuery plugin. It's 
 * Thanks to awesome tester: [Christine Winckler](http://ChristineTheDesigner.com)
 
 == Upgrade Notice ==
+= 2.0.3 =
+v2.0 IS A MAJOR UPDATE. Visit plugin home for detailed information about updates. / 2.0.0: Improved interface, ability to feature any post type, new template system, more filters, and more! / 2.0.3: Add Spanish translation.
+
 == 2.0.2 =
 v2.0 IS A MAJOR UPDATE. Visit plugin home for detailed information about updates. / 2.0.0: Improved interface, ability to feature any post type, new template system, more filters, and more! / 2.0.2: New Polish translation, multiple small bug fixes, new `fpw_read_more_ellipsis` filter.
 
