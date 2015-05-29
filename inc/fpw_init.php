@@ -20,7 +20,7 @@
 /**
  * define and update the plugin option in the database
  */
-define( 'FPW_VERSION', '2.0.2' );
+define( 'FPW_VERSION', '2.0.3' );
 function fpw_update_version() {
 	// Update the Plugin Version if it doesn't exist or is out of sync
 	$fpw_options = get_option( 'fpw_options' );
